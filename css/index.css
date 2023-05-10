@@ -74,13 +74,13 @@
 }
 #index-banner .chief-info .chief-greeting::before{
     background: url(../images/leader_icon_left.png);
-    left: -25px;
-    top: -15px;
+    left: -10%;
+    top: -15%;
 }
 #index-banner .chief-info .chief-greeting::after{
     background: url(../images/leader_icon_right.png);
-    right: -25px;
-    bottom: -15px;
+    right: -10%;
+    bottom: -15%;
 }
 #index-banner .chief-info .chief-greeting .upper-point{
     position: relative;
@@ -127,85 +127,33 @@
         height: auto;
         border-bottom: none;
     }
-    #index-banner .chief-info .chief-info-list .chief-info-item > a{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: inherit;
-        color: #fff;
-        font-weight: 300;
-    }
     #index-banner .chief-info{
-        margin-top: min(30px, 5vw);
-        /* max-height: 210px; */
+        /* 화면 너비가 540px일때 margin-top이 80px에 도달 */
+        margin-top: min(calc(54% - 172px), 80px);
         height: 180px;
         align-items: end;
         background: #fff url(../images/bg_leader2.png) no-repeat left bottom 36px / auto;
     }
     #index-banner .chief-info .chief-greeting{
-        position: absolute;
-        left: 5vw;
-        top: 40%;
-        font-size: min(5.5vw, 24px);
-        line-height: 1.2;
-        font-weight: 500;
+        left: min(5vw, 30px);
+        /* 320px일 때 top: 30px 정도에서 시작하여 화면이 넓어지면서 -10px 도달 */
+        top: max(-10px, calc(77px - 13.6vw));
+        transform: translateY(0);
+        /* 화면 너비가 540px일 때 32px 도달 */
+        font-size: min(calc(3.2vw + 10px), 32px);
+    }
+    #index-banner .chief-info .chief-img-box{
+        /* 화면 너비가 550px쯤 max-height가 250px에 도달 */
+        max-height: 250px;
+        height: max(46vw, 150px);
+        margin: 0 10px -10px 0;
     }
     #index-banner .chief-info .chief-greeting::before,
     #index-banner .chief-info .chief-greeting::after{
-        content: '';
-        display: block;
-        position: absolute;
-        width: 19px;
-        height: 13px;
-    }
-    #index-banner .chief-info .chief-greeting::before{
-        background: url(../images/leader_icon_left.png);
-        left: -25px;
-        top: -15px;
-    }
-    #index-banner .chief-info .chief-greeting::after{
-        background: url(../images/leader_icon_right.png);
-        right: -25px;
-        bottom: -15px;
-    }
-    #index-banner .chief-info .chief-greeting .upper-point{
-        position: relative;
-    }
-    #index-banner .chief-info .chief-greeting .upper-point::after{
-        content: '';
-        display: block;
-        width: 4px;
-        height: 4px;
-        border-radius: 50%;
-        background: var(--main-color);
-        position: absolute;
-        left: 50%;
-        top: 0;
-        transform: translateX(-50%);
-    }
-    #index-banner .chief-info .chief-greeting .chief-name{
-        font-size: 1.2em;
-        color: #373c4f;
-        font-weight: 700;
-        letter-spacing: 0.15em;
-    }
-    #index-banner .chief-info .chief-img-box{
-        max-height: 195px;
-        height: max(35vw, 140px);
-        margin: 0 30px 0 0;
+        transform: scale(0.85);
     }
     #index-banner .chief-info .chief-info-list{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
         width: 100%;
-        padding: 0 8px;
-        background: linear-gradient(to left, #383a43, #9d091f);
-        box-shadow: 2px 5px 15px rgba(21, 21, 21, 0.5);
-    }
-    #index-banner .chief-info .chief-info-list .chief-info-item {
-        height: 36px;
+        border-radius: 7px;
     }
 }

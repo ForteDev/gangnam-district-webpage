@@ -3,11 +3,9 @@
 #header .header-top .container {
     display: flex;
 }
-
 .header-bottom .container .mobile-header {
     display: contents;
 }
-
 .header-bottom .search{
     flex-shrink: 0;
 }
@@ -38,7 +36,6 @@
     align-items: center;
     justify-content: center;
 }
-
 #header .header-top .header-menu{
     display: flex;
     align-items: center;
@@ -124,11 +121,7 @@
 }
 
 
-
-
 @media (max-width: 1080px){
-
-
     #relatedsites-nav{
         display: none;
     }
@@ -398,12 +391,6 @@
         margin-right: 5px;
     }
 
-
-
-
-
-
-
     /* 로고 검색창 메뉴버튼 설정 */
     .header-bottom .container{
         display: flex;
@@ -515,25 +502,14 @@
     .header-bottom .search .suggest-terms .suggest-list:last-child::after{
         display: none;
     }
-
-
-    
-
-
-
-    /* 글로벌 네비  */
-    
 }
 
 
 
 @media (min-width: 1081px){
-
-
     #header .header-top {
         height: 40px;
         border-bottom: 1px solid #d2d2d2;
-
     }
     #header .header-top .container {
         height: inherit;
@@ -556,10 +532,6 @@
         align-items: center;
         justify-content: space-between;
     }
-    
-    
-    
-
     #relatedsites-nav{
         height: 40px;
     }
