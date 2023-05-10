@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+/* reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+a { text-decoration: none; color: inherit; }
+li { list-style: none; }
+img { vertical-align: top; max-width: 100%; }
+button { border: none; background: none; cursor: pointer; } 
+
+/* common */
+:root { font-family: 'Noto Sans KR' sans-serif; }
+.hidden { display: none !important; }
+.cl::after { content: ''; clear: both; display: block; }
+.wrap { width: 1280px; margin: 0 auto; position: relative; }
+
+/* HEADER */
+#pc-header { background: #fcf; }
+#pc-header .header-top { display: flex; align-items: flex-start; justify-content: space-between; height: 40px; background: #ccf; }
+#pc-header .header-top .family-sites { display: flex; }
+#pc-header .header-top .family-sites > li { padding: 0 15px; }
+#pc-header .header-top .family-sites li .lnb { display: none; position: absolute; }
+#pc-header .header-top .family-sites li:hover .lnb { display: block; }
+#pc-header .header-top .family-sites {  }
+#pc-header .header-top .family-sites {  }
+#pc-header .header-top .right-menu { display: flex; align-items: center; column-gap: 20px;}
+
+#pc-header .header-top .right-menu #weather { height: 20px; background: #636; }
+#pc-header { background: #fcf; }

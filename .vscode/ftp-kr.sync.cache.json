@@ -1,0 +1,945 @@
+{
+  "ftp://jasonpark.dothome.co.kr:21@jasonpark": {
+    "html": {
+      "css": {
+        "global.css": {
+          "type": "-",
+          "size": 23834,
+          "lmtime": 1683614624332,
+          "modified": false
+        },
+        "index.css": {
+          "type": "-",
+          "size": 1756,
+          "lmtime": 1683623280281,
+          "modified": false
+        },
+        "layout.css": {
+          "type": "-",
+          "size": 0,
+          "lmtime": 0,
+          "modified": false
+        },
+        "m_style.css": {
+          "type": "-",
+          "size": 0,
+          "lmtime": 0,
+          "modified": false
+        },
+        "reset.css": {
+          "type": "-",
+          "size": 1175,
+          "lmtime": 1683621319135,
+          "modified": false
+        },
+        "sandbox_style.css": {
+          "type": "-",
+          "size": 964,
+          "lmtime": 1682322772907,
+          "modified": false
+        },
+        "style.css": {
+          "type": "-",
+          "size": 1345,
+          "lmtime": 1682907033243,
+          "modified": false
+        }
+      },
+      "favicon.png": {
+        "type": "-",
+        "size": 896,
+        "lmtime": 0,
+        "modified": false
+      },
+      "images": {
+        "2023 05. 05.금강남힐링센터(개포) 삼성로3길 39pm12_00 _ pm6_00강남힐링_yythk.jpg": {
+          "type": "-",
+          "size": 403132,
+          "lmtime": 0,
+          "modified": false
+        },
+        "2023 강남구 릴레이 동행마켓 참가자 모집.jpg": {
+          "type": "-",
+          "size": 365625,
+          "lmtime": 0,
+          "modified": false
+        },
+        "2023 강남구 우리동네 학습관평생교육 프로그램 안내.jpg": {
+          "type": "-",
+          "size": 240585,
+          "lmtime": 0,
+          "modified": false
+        },
+        "2023 강남뮤직페스티벌 G-KPOP CONCERT2023. 5. 5.(금) _ 5._yyt.jpg": {
+          "type": "-",
+          "size": 418102,
+          "lmtime": 0,
+          "modified": false
+        },
+        "2023 상반기 강남구 반려견 순회 놀이터입장료 무료_2023 상반기 반려견_y.jpg": {
+          "type": "-",
+          "size": 319235,
+          "lmtime": 0,
+          "modified": false
+        },
+        "2023 지역사회건강조사기간 2023. 5. 16.(화) _ 7. 31.(월).jpg": {
+          "type": "-",
+          "size": 595478,
+          "lmtime": 0,
+          "modified": false
+        },
+        "2023년 4월호(제332호).jpg": {
+          "type": "-",
+          "size": 178417,
+          "lmtime": 0,
+          "modified": false
+        },
+        "2023년 5월 _ 6월강남힐링센터 프로그램 안내오늘 시작하세요. 나를 치유하는.jpg": {
+          "type": "-",
+          "size": 431718,
+          "lmtime": 0,
+          "modified": false
+        },
+        "2023년 강남구 중소기업 · 소상공인 대출이자 지원 사업지원이자 __yythk.jpg": {
+          "type": "-",
+          "size": 338127,
+          "lmtime": 0,
+          "modified": false
+        },
+        "2023년 강남구 평생교육 홍보콘텐츠 공모전접수기간_ 2023년 4월 24일(월)_yythk.jpg": {
+          "type": "-",
+          "size": 320114,
+          "lmtime": 0,
+          "modified": false
+        },
+        "2023년 로봇인공지능 해커톤2023. 5. 17.(수) 온라인 개최모집기간 __yythkg.jpg": {
+          "type": "-",
+          "size": 405357,
+          "lmtime": 0,
+          "modified": false
+        },
+        "2023년_4월 법인지방소득세 신고기간 운영 안내• 대상 _ 12월 결산법인의_.jpg": {
+          "type": "-",
+          "size": 258383,
+          "lmtime": 0,
+          "modified": false
+        },
+        "2024년도 강남구주민참여예산 주민제안사업 공모신청기간_3. 1. _ 6. 30.jpg": {
+          "type": "-",
+          "size": 274408,
+          "lmtime": 0,
+          "modified": false
+        },
+        "6.25전쟁 무공훈장 주인공 찾기 캠페인1661-7625국방부 홈페이지 www.mnd.go.kr육군_yy.jpg": {
+          "type": "-",
+          "size": 526056,
+          "lmtime": 0,
+          "modified": false
+        },
+        "65세 어르신 폐렴구균 예방접종1회 무료접종침습성 폐렴구균 감염증 예방을 위해_.jpg": {
+          "type": "-",
+          "size": 321448,
+          "lmtime": 0,
+          "modified": false
+        },
+        "ONE  PICK.jpg": {
+          "type": "-",
+          "size": 8147,
+          "lmtime": 0,
+          "modified": false
+        },
+        "[4월 3주 위클리 강남] ‘강남_ 디지털을 품다’ _장애인의 날.png": {
+          "type": "-",
+          "size": 378027,
+          "lmtime": 0,
+          "modified": false
+        },
+        "[강남인] ep2. 헬시 플레저 맨 ㅣ 세곡보건지소 주무관 폼 미쳤.jpg": {
+          "type": "-",
+          "size": 23798,
+          "lmtime": 0,
+          "modified": false
+        },
+        "[슬기로운 강남생활] 강남힐링센터편.jpg": {
+          "type": "-",
+          "size": 34046,
+          "lmtime": 0,
+          "modified": false
+        },
+        "[슬기로운 강남생활] 친환경 노면 청소편.jpg": {
+          "type": "-",
+          "size": 38682,
+          "lmtime": 0,
+          "modified": false
+        },
+        "arr_red_left.png": {
+          "type": "-",
+          "size": 1266,
+          "lmtime": 0,
+          "modified": false
+        },
+        "arr_red_right.png": {
+          "type": "-",
+          "size": 1264,
+          "lmtime": 0,
+          "modified": false
+        },
+        "banner_kakao_mo.png": {
+          "type": "-",
+          "size": 21218,
+          "lmtime": 0,
+          "modified": false
+        },
+        "banner_kakao_pc.png": {
+          "type": "-",
+          "size": 18086,
+          "lmtime": 0,
+          "modified": false
+        },
+        "bg_depth.png": {
+          "type": "-",
+          "size": 16205,
+          "lmtime": 0,
+          "modified": false
+        },
+        "bg_footer_logo.png": {
+          "type": "-",
+          "size": 2037,
+          "lmtime": 0,
+          "modified": false
+        },
+        "bg_leader2.png": {
+          "type": "-",
+          "size": 3626,
+          "lmtime": 0,
+          "modified": false
+        },
+        "bg_leader3.png": {
+          "type": "-",
+          "size": 246723,
+          "lmtime": 0,
+          "modified": false
+        },
+        "bg_leader_link.png": {
+          "type": "-",
+          "size": 4759,
+          "lmtime": 0,
+          "modified": false
+        },
+        "bg_leader_link2.png": {
+          "type": "-",
+          "size": 5976,
+          "lmtime": 0,
+          "modified": false
+        },
+        "bg_leftdepth_01.png": {
+          "type": "-",
+          "size": 12413,
+          "lmtime": 0,
+          "modified": false
+        },
+        "btn-mobile_menu.png": {
+          "type": "-",
+          "size": 1108,
+          "lmtime": 0,
+          "modified": false
+        },
+        "btn-sch.png": {
+          "type": "-",
+          "size": 1328,
+          "lmtime": 0,
+          "modified": false
+        },
+        "btn-top.png": {
+          "type": "-",
+          "size": 1185,
+          "lmtime": 0,
+          "modified": false
+        },
+        "complaints_icon_1.png": {
+          "type": "-",
+          "size": 357,
+          "lmtime": 0,
+          "modified": false
+        },
+        "complaints_icon_2.png": {
+          "type": "-",
+          "size": 535,
+          "lmtime": 0,
+          "modified": false
+        },
+        "complaints_icon_3.png": {
+          "type": "-",
+          "size": 513,
+          "lmtime": 0,
+          "modified": false
+        },
+        "complaints_icon_4.png": {
+          "type": "-",
+          "size": 704,
+          "lmtime": 0,
+          "modified": false
+        },
+        "complaints_icon_5.png": {
+          "type": "-",
+          "size": 580,
+          "lmtime": 0,
+          "modified": false
+        },
+        "gnLife_link_bg.png": {
+          "type": "-",
+          "size": 1830,
+          "lmtime": 0,
+          "modified": false
+        },
+        "mobile-menu_btn_group.png": {
+          "type": "-",
+          "size": 3039,
+          "lmtime": 0,
+          "modified": false
+        },
+        "mobile_close.png": {
+          "type": "-",
+          "size": 1337,
+          "lmtime": 0,
+          "modified": false
+        },
+        "newwindow.png": {
+          "type": "-",
+          "size": 173,
+          "lmtime": 0,
+          "modified": false
+        },
+        "pageInfo.txt": {
+          "type": "-",
+          "size": 52,
+          "lmtime": 1682302461806,
+          "modified": false
+        },
+        "service_ico01.png": {
+          "type": "-",
+          "size": 1857,
+          "lmtime": 0,
+          "modified": false
+        },
+        "service_ico02.png": {
+          "type": "-",
+          "size": 1561,
+          "lmtime": 0,
+          "modified": false
+        },
+        "service_ico03.png": {
+          "type": "-",
+          "size": 2021,
+          "lmtime": 0,
+          "modified": false
+        },
+        "service_ico04.png": {
+          "type": "-",
+          "size": 2625,
+          "lmtime": 0,
+          "modified": false
+        },
+        "service_ico05.png": {
+          "type": "-",
+          "size": 1734,
+          "lmtime": 0,
+          "modified": false
+        },
+        "service_ico06.png": {
+          "type": "-",
+          "size": 2284,
+          "lmtime": 0,
+          "modified": false
+        },
+        "service_ico07.png": {
+          "type": "-",
+          "size": 1778,
+          "lmtime": 0,
+          "modified": false
+        },
+        "service_ico08.png": {
+          "type": "-",
+          "size": 2174,
+          "lmtime": 0,
+          "modified": false
+        },
+        "service_ico09.png": {
+          "type": "-",
+          "size": 2112,
+          "lmtime": 0,
+          "modified": false
+        },
+        "service_ico10.png": {
+          "type": "-",
+          "size": 2127,
+          "lmtime": 0,
+          "modified": false
+        },
+        "service_ico11.png": {
+          "type": "-",
+          "size": 2442,
+          "lmtime": 0,
+          "modified": false
+        },
+        "service_ico12.png": {
+          "type": "-",
+          "size": 1922,
+          "lmtime": 0,
+          "modified": false
+        },
+        "service_ico13.png": {
+          "type": "-",
+          "size": 1911,
+          "lmtime": 0,
+          "modified": false
+        },
+        "service_ico14.png": {
+          "type": "-",
+          "size": 2296,
+          "lmtime": 0,
+          "modified": false
+        },
+        "service_ico15.png": {
+          "type": "-",
+          "size": 2119,
+          "lmtime": 0,
+          "modified": false
+        },
+        "service_ico17.png": {
+          "type": "-",
+          "size": 2549,
+          "lmtime": 0,
+          "modified": false
+        },
+        "service_ico18.png": {
+          "type": "-",
+          "size": 2337,
+          "lmtime": 0,
+          "modified": false
+        },
+        "service_ico19.png": {
+          "type": "-",
+          "size": 2527,
+          "lmtime": 0,
+          "modified": false
+        },
+        "service_ico20.png": {
+          "type": "-",
+          "size": 2478,
+          "lmtime": 0,
+          "modified": false
+        },
+        "service_ico21.png": {
+          "type": "-",
+          "size": 1793,
+          "lmtime": 0,
+          "modified": false
+        },
+        "service_ico22.png": {
+          "type": "-",
+          "size": 1447,
+          "lmtime": 0,
+          "modified": false
+        },
+        "service_ico23.png": {
+          "type": "-",
+          "size": 2413,
+          "lmtime": 0,
+          "modified": false
+        },
+        "sns_bl.png": {
+          "type": "-",
+          "size": 1592,
+          "lmtime": 0,
+          "modified": false
+        },
+        "sns_blog.png": {
+          "type": "-",
+          "size": 1748,
+          "lmtime": 0,
+          "modified": false
+        },
+        "sns_face.png": {
+          "type": "-",
+          "size": 1461,
+          "lmtime": 0,
+          "modified": false
+        },
+        "sns_fb.png": {
+          "type": "-",
+          "size": 1220,
+          "lmtime": 0,
+          "modified": false
+        },
+        "sns_insta.png": {
+          "type": "-",
+          "size": 7911,
+          "lmtime": 0,
+          "modified": false
+        },
+        "sns_is.png": {
+          "type": "-",
+          "size": 1517,
+          "lmtime": 0,
+          "modified": false
+        },
+        "sns_tiktok.png": {
+          "type": "-",
+          "size": 2544,
+          "lmtime": 0,
+          "modified": false
+        },
+        "sns_tw.png": {
+          "type": "-",
+          "size": 1457,
+          "lmtime": 0,
+          "modified": false
+        },
+        "sns_tweet.png": {
+          "type": "-",
+          "size": 2124,
+          "lmtime": 0,
+          "modified": false
+        },
+        "sns_youtube.png": {
+          "type": "-",
+          "size": 1572,
+          "lmtime": 0,
+          "modified": false
+        },
+        "sns_yt.png": {
+          "type": "-",
+          "size": 1344,
+          "lmtime": 0,
+          "modified": false
+        },
+        "wea_cloudy.png": {
+          "type": "-",
+          "size": 366,
+          "lmtime": 0,
+          "modified": false
+        },
+        "wea_overcast.png": {
+          "type": "-",
+          "size": 405,
+          "lmtime": 0,
+          "modified": false
+        },
+        "‘강남_ 디지털을 품다’.jpg": {
+          "type": "-",
+          "size": 69783,
+          "lmtime": 0,
+          "modified": false
+        },
+        "‘강남구 새마을방역봉사대 발대식’.jpg": {
+          "type": "-",
+          "size": 104622,
+          "lmtime": 0,
+          "modified": false
+        },
+        "‘강남구 통합방위협의회 정기회의’.jpg": {
+          "type": "-",
+          "size": 69592,
+          "lmtime": 0,
+          "modified": false
+        },
+        "‘누워서 보는 콘서트’ 관람.jpg": {
+          "type": "-",
+          "size": 83506,
+          "lmtime": 0,
+          "modified": false
+        },
+        "‘장애인의 날’ 축하.jpg": {
+          "type": "-",
+          "size": 87566,
+          "lmtime": 0,
+          "modified": false
+        },
+        "‘집값 작전세력 근절 대책 회의’ 참석.jpg": {
+          "type": "-",
+          "size": 64195,
+          "lmtime": 0,
+          "modified": false
+        },
+        "강남구 벚꽃명소 삼대장_ 어디_.png": {
+          "type": "-",
+          "size": 357202,
+          "lmtime": 0,
+          "modified": false
+        },
+        "강남구 시네마틱 홍보영상 with 뉴니온&퓨전엠씨&XD.jpg": {
+          "type": "-",
+          "size": 27006,
+          "lmtime": 0,
+          "modified": false
+        },
+        "강남구 야간민원실 변경운영 안내매주 월요일 18시부터 20시까지 운영해 오던_y.jpg": {
+          "type": "-",
+          "size": 237356,
+          "lmtime": 0,
+          "modified": false
+        },
+        "강남구 주민참여예산위원회 위원 공개모집임기 _ 2년 (2023. 6. 1._yy.jpg": {
+          "type": "-",
+          "size": 275866,
+          "lmtime": 0,
+          "modified": false
+        },
+        "강남구보건소2023년 장애인 의치(틀니) 지원 사업 대상자 모집기간 _ 2023.jpg": {
+          "type": "-",
+          "size": 338118,
+          "lmtime": 0,
+          "modified": false
+        },
+        "강남구청 로고 (1).png": {
+          "type": "-",
+          "size": 3721,
+          "lmtime": 0,
+          "modified": false
+        },
+        "강남구청 로고.png": {
+          "type": "-",
+          "size": 5005,
+          "lmtime": 0,
+          "modified": false
+        },
+        "강남구청-헤더로고.png": {
+          "type": "-",
+          "size": 5515,
+          "lmtime": 0,
+          "modified": false
+        },
+        "강남구청장 조성명.png": {
+          "type": "-",
+          "size": 96663,
+          "lmtime": 0,
+          "modified": false
+        },
+        "건강한 삶을 위한 해답_ 노르딕 워킹교실.png": {
+          "type": "-",
+          "size": 54850,
+          "lmtime": 0,
+          "modified": false
+        },
+        "고즈넉한 한옥에서 책 읽고📕 전통놀이도 하고😸.jpg": {
+          "type": "-",
+          "size": 185860,
+          "lmtime": 0,
+          "modified": false
+        },
+        "국가안전시스템 개편 종합대책함께 만드는 모두의 일상이 안전한 대한민국_.jpg": {
+          "type": "-",
+          "size": 154833,
+          "lmtime": 0,
+          "modified": false
+        },
+        "꿈이 모이는 도시 미래를 그리는 강남.png": {
+          "type": "-",
+          "size": 4441,
+          "lmtime": 0,
+          "modified": false
+        },
+        "내손으로 가꾸는 힐링텃밭.jpg": {
+          "type": "-",
+          "size": 29792,
+          "lmtime": 0,
+          "modified": false
+        },
+        "논현1동 재능 나눔 소통 교육5월 가정의 달 특강건강 코칭 -_yy.jpg": {
+          "type": "-",
+          "size": 219614,
+          "lmtime": 0,
+          "modified": false
+        },
+        "닫기.jpg": {
+          "type": "-",
+          "size": 1619,
+          "lmtime": 0,
+          "modified": false
+        },
+        "대한민국 안전大전환 집중안전점검집중안전점검기간_2023. 4. 17. _ 6. 16.참여방법.jpg": {
+          "type": "-",
+          "size": 370832,
+          "lmtime": 0,
+          "modified": false
+        },
+        "도서관 책도 배달 되나요_🤔🙄 U도서관 이용하세요_ 📚.jpg": {
+          "type": "-",
+          "size": 34498,
+          "lmtime": 0,
+          "modified": false
+        },
+        "디지털을 품은 스마트시티_ 강남_.jpg": {
+          "type": "-",
+          "size": 27966,
+          "lmtime": 0,
+          "modified": false
+        },
+        "만나이통일법을 알아보자우리 이제 만 나이를 사용해요__.jpg": {
+          "type": "-",
+          "size": 340532,
+          "lmtime": 0,
+          "modified": false
+        },
+        "멘토링.jpg": {
+          "type": "-",
+          "size": 8130,
+          "lmtime": 0,
+          "modified": false
+        },
+        "법률고문 변호사 위촉.jpg": {
+          "type": "-",
+          "size": 78438,
+          "lmtime": 0,
+          "modified": false
+        },
+        "보다 안전하고 빠른  크롬 최신버전으로 업그레이드 하세요.jpg": {
+          "type": "-",
+          "size": 4281,
+          "lmtime": 0,
+          "modified": false
+        },
+        "보다 안전하고 빠른 사파리 최신버전으로 업그레이드 하세요.jpg": {
+          "type": "-",
+          "size": 4190,
+          "lmtime": 0,
+          "modified": false
+        },
+        "보다 안전하고 빠른 익스플로러 최신버전으로 업그레이드 하세요.jpg": {
+          "type": "-",
+          "size": 3178,
+          "lmtime": 0,
+          "modified": false
+        },
+        "보다 안전하고 빠른 파이거폭스 최신버전으로 업그레이드 하세요.jpg": {
+          "type": "-",
+          "size": 4222,
+          "lmtime": 0,
+          "modified": false
+        },
+        "상담·심리여행으로 청년 1인가구 마음챙긴다.png": {
+          "type": "-",
+          "size": 86401,
+          "lmtime": 0,
+          "modified": false
+        },
+        "서울시 내장형 마이크로칩을 통한 동물등록 활성화 사업반려동물 내장형 동물등록지원.jpg": {
+          "type": "-",
+          "size": 321110,
+          "lmtime": 0,
+          "modified": false
+        },
+        "서울청년문화패스서울청년문화패스란_만 19세(2004년생) 청년들에게 공연관람 기회를 지원하는 문화이용권_.jpg": {
+          "type": "-",
+          "size": 403145,
+          "lmtime": 0,
+          "modified": false
+        },
+        "소상공인 버팀목 고용장려금 지원서울시가 소상공인 민생경제 회복을 위해 2023년.jpg": {
+          "type": "-",
+          "size": 278667,
+          "lmtime": 0,
+          "modified": false
+        },
+        "안전한 강남 만들기 함께해요_.jpg": {
+          "type": "-",
+          "size": 38880,
+          "lmtime": 0,
+          "modified": false
+        },
+        "어르신 건강관리센터 확대 운영만65세 이상 어르신(강남구 거주자)운영시간 _ 0.jpg": {
+          "type": "-",
+          "size": 233860,
+          "lmtime": 0,
+          "modified": false
+        },
+        "엄마_ 아빠 모두 만 24세 이하인가요_청소년부모 아동양육비 신청하세요청소년부모_yythkg.jpg": {
+          "type": "-",
+          "size": 291345,
+          "lmtime": 0,
+          "modified": false
+        },
+        "역삼2동 주민들과 도곡시장 상인들이 함께하는 노래 한마당_쾌지나도곡나네2023년 5월_yyt.jpg": {
+          "type": "-",
+          "size": 488157,
+          "lmtime": 0,
+          "modified": false
+        },
+        "우리동네 개선이 필요한 교통시설을 알려주세요_2023. 4. 3.(월) _ 6..jpg": {
+          "type": "-",
+          "size": 484369,
+          "lmtime": 0,
+          "modified": false
+        },
+        "우리집 에너지 효율 개선 무이자 융자 해드립니다민간건물 에너지 성능개선_yyth.jpg": {
+          "type": "-",
+          "size": 297015,
+          "lmtime": 0,
+          "modified": false
+        },
+        "웹접근성인증.jpg": {
+          "type": "-",
+          "size": 8937,
+          "lmtime": 0,
+          "modified": false
+        },
+        "유공납세자 표창장 수여.jpg": {
+          "type": "-",
+          "size": 80930,
+          "lmtime": 0,
+          "modified": false
+        },
+        "이태원 사고로 고인이 되신 분들의 명복을 빕니다 강남구 합동분향소.jpg": {
+          "type": "-",
+          "size": 440146,
+          "lmtime": 0,
+          "modified": false
+        },
+        "재난안전상황실 방문.jpg": {
+          "type": "-",
+          "size": 66759,
+          "lmtime": 0,
+          "modified": false
+        },
+        "제1회 60초 강남 영상공모전.jpg": {
+          "type": "-",
+          "size": 233396,
+          "lmtime": 0,
+          "modified": false
+        },
+        "주민등록증 모바일 확인서비스 이용안내주민등록증 모바일 확인서비스를 통한 새로운.jpg": {
+          "type": "-",
+          "size": 396336,
+          "lmtime": 0,
+          "modified": false
+        },
+        "학생 노리는 ‘낯선 음료’ 절대 마시지 마세요_☎ 신고전화 _ 11.png": {
+          "type": "-",
+          "size": 89875,
+          "lmtime": 0,
+          "modified": false
+        },
+        "한국외식업중앙회 정기총회.jpg": {
+          "type": "-",
+          "size": 50102,
+          "lmtime": 0,
+          "modified": false
+        },
+        "leader_icon_left.png": {
+          "type": "-",
+          "size": 1149,
+          "lmtime": 1683623128962,
+          "modified": false
+        },
+        "leader_icon_right.png": {
+          "type": "-",
+          "size": 1153,
+          "lmtime": 1683623130862,
+          "modified": false
+        }
+      },
+      "index.html": {
+        "type": "-",
+        "size": 88312,
+        "lmtime": 1683622343470,
+        "modified": false
+      },
+      "index1.html": {
+        "type": "-",
+        "size": 7100,
+        "lmtime": 1682386700170,
+        "modified": false
+      },
+      "js": {
+        "global.js": {
+          "type": "-",
+          "size": 8057,
+          "lmtime": 1683614971110,
+          "modified": false
+        },
+        "s.js": {
+          "type": "-",
+          "size": 7379,
+          "lmtime": 1683613532176,
+          "modified": false
+        }
+      },
+      "sandbox.html": {
+        "type": "-",
+        "size": 2639,
+        "lmtime": 1683514831460,
+        "modified": false
+      },
+      "교육.png": {
+        "type": "-",
+        "size": 16320,
+        "lmtime": 0,
+        "modified": false
+      },
+      "동주민센터.png": {
+        "type": "-",
+        "size": 24392,
+        "lmtime": 0,
+        "modified": false
+      },
+      "문화.png": {
+        "type": "-",
+        "size": 14384,
+        "lmtime": 0,
+        "modified": false
+      },
+      "새 폴더": {
+        "screencapture-gangnam-go-kr-mobile-main-do-2023-05-03-17_48_14.png": {
+          "type": "-",
+          "size": 1224513,
+          "lmtime": 0,
+          "modified": false
+        },
+        "강남구청-메인-gnb.png": {
+          "type": "-",
+          "size": 158814,
+          "lmtime": 0,
+          "modified": false
+        },
+        "강남구청-메인-데스크탑.png": {
+          "type": "-",
+          "size": 1786176,
+          "lmtime": 0,
+          "modified": false
+        },
+        "강남구청-메인-모바일-네비게이션.png": {
+          "type": "-",
+          "size": 21025,
+          "lmtime": 0,
+          "modified": false
+        },
+        "강남구청-메인-모바일-네비게이션2.png": {
+          "type": "-",
+          "size": 35082,
+          "lmtime": 0,
+          "modified": false
+        },
+        "강남구청-메인-모바일.png": {
+          "type": "-",
+          "size": 1210160,
+          "lmtime": 0,
+          "modified": false
+        }
+      },
+      "생활복지.png": {
+        "type": "-",
+        "size": 51069,
+        "lmtime": 0,
+        "modified": false
+      },
+      "의회.png": {
+        "type": "-",
+        "size": 7643,
+        "lmtime": 0,
+        "modified": false
+      }
+    }
+  },
+  "$version": 1
+}

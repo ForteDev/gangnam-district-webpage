@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강남구청</title>
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <header id="header">
+        <div class="header-top">
+            <div class="container">
+                <nav class="navigation-container">
+                    <ul class="nav-select-buttons globalnav-active mobile-only">
+                        <li class="globalnav-button">
+                            <button type="button" onclick="activateGlobalNav()">강남구청</button>
+                        </li>
+                        <li class="relatedsites-nav-button">
+                            <button type="button" onclick="activateSitesNav()">패밀리 사이트</button>
+                        </li>
+                    </ul>
+                    <div id="globalnav" class="active">
+                        <ul class="globalnav-menu">
+                            <li class="globalnav-menu-list">
+                                <a href="#none" class="globalnav-menu-link">종합민원</a>
+                                <div class="globalnav-submenu-container">
+                                    <div class="globalnav-submenu-title-box">
+                                        <h3 class="globalnav-submenu-title">종합민원</h3>
+                                    </div>
+                                    <ul class="globalnav-submenu">
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">종합민원안내</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">민원실안내</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">스마트 번호표 발급(대기현황)</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">여권민원안내</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">발급/열람</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link external-link">새올전자민원창구</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link external-link">민원 24</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">무인민원발급기</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">온라인행정심판</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">행정서비스헌장</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">민원서식(사무편람)</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">지적</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">민원현황</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">민원신고</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">공직자부조리신고</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">불법행위신고</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">소극행정신고</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">공무원비리 · 직무유기 · 불친절신고센터</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link external-link">안전신고</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">공공재정 부정청구등 신고</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link external-link">예산낭비 신고센터</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">공익신고</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">하도급부조리신고</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">공공하수 악취 신고</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">화분설치안내·불편신고</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">규제개혁</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">민원신청/상담</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">구청장에게바란다</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">전문가 무료상담</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">대형생활폐기물</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">궁금하세요?(FAQ)</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">궁금하세요?(FAQ)</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">알림·서비스</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">도로점용허가</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link external-link">주정차단속알림</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">문자알림(뉴스터치)서비스</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">격리통지서 발급</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">PCR검사 결과 조회</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">코로나19 제증명서 발급</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="globalnav-menu-list">
+                                <a href="#none" class="globalnav-menu-link">강남소식</a>
+                                <div class="globalnav-submenu-container">
+                                    <div class="globalnav-submenu-title-box">
+                                        <h3 class="globalnav-submenu-title">강남소식</h3>
+                                    </div>
+                                    <ul class="globalnav-submenu">
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">뉴스 홈</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">뉴스 홈</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">강남이슈</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">강남이슈</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">강남라이프TV</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">투데이강남</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">위클리강남</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">월간종합뉴스</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">라이프강남</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">트렌드강남</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">구의회소식</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">해외홍보방송</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">보도자료</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">보도자료</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">언론보도</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">카드뉴스</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">카드뉴스</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">오늘의 포토</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">오늘의 포토</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">아카이브강남</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">영상아카이브</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">사진아카이브</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">로고아카이브</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">강남라이프</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link external-link">웹진</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">전체기사</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">지난호보기</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">구독 인증샷</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">강남라이프 구독 신청</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="globalnav-menu-list">
+                                <a href="#none" class="globalnav-menu-link">소통·참여</a>
+                                <div class="globalnav-submenu-container">
+                                    <div class="globalnav-submenu-title-box">
+                                        <h3 class="globalnav-submenu-title">소통·참여</h3>
+                                    </div>
+                                    <ul class="globalnav-submenu">
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">공약&amp;매니페스토</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">민선8기 비전</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">매니페스토</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">민선8기 공약</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">참여와 소통</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">공약자료실</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">구민 아이디어</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">구민 아이디어</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">주민참여예산</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">주민참여예산</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">제안사업 접수</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">위원 공개모집</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">자유게시판</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">자유게시판</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">구민의견</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">구민의견</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">교육·강좌</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">정보화교육</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">디지털 상담소</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">장애인 방문교육</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">자전거교실</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">유소년축구교실</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">여성·실버축구교실</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">교육정보</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">유휴공간 대관 안내</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">민방위</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">참여</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">이벤트</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">대학생행정체험연수</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">평생교육 홍보콘텐츠 공모전</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">체육공원 명칭 선호도 조사</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">에코마일리지</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">자원봉사</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">신청</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">명예기자 모집</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">2023 세곡천 힐링텃밭 분양</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">2023 강남구 상자텃밭 신청</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">소상공인 릴레이동행마켓 참여</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">강남유닉투어</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">승강기 안전사고 예방</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">계약원가 자문서비스</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">코로나19 고위험집단시설 신속역학조사</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">예약</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">도곡어린이실내놀이터</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">세곡어린이실내놀이터</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">일원어린이실내놀이터</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">강남아트</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">골밀도 검사 예약</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">헬스체크업</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">대사증후군검사</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">진로진학 상담실 꿈마당</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">강남미래교육센터</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">행복콘서트 공연 예약</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">강남스퀘어 광장 대관예약</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">강남구 스마트팜 체험</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">대여</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">자전거/보관소대여</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">강남구 공구대여소</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">불법촬영 탐지기 대여</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">정보통신보조기기</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link external-link">사랑의 PC신청</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">지역커뮤니티 활성화</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">사업소개</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">공지사항</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">자료실</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">아동친화도시</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">아동친화도시</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">아동친화도시강남</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">아동권리교육</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">아동권리지킴이 옴부즈퍼슨</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">아동청소년참여</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">아동친화도시 게시판</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="globalnav-menu-list">
+                                <a href="#none" class="globalnav-menu-link">행정·정보</a>
+                                <div class="globalnav-submenu-container">
+                                    <div class="globalnav-submenu-title-box">
+                                        <h3 class="globalnav-submenu-title">행정·정보</h3>
+                                    </div>
+                                    <ul class="globalnav-submenu">
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">공지사항</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">공지사항</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">행사</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">석면해체제거일정</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">고시공고</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">고시공고</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">채용공고</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">채용공고</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">입법예고</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">입법예고</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">수의계약</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">입찰정보</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link external-link">수의계약현황</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">수의계약현황</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">우리 업체 소개하기</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">일반계약</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">발주계획</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link external-link">입찰정보</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link external-link">개찰결과</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link external-link">계약현황</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">구보</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">구보</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">구정백서</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">구정백서</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">연구용역</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">연구용역</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">적극행정</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">적극행정제도소개</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">적극행정지원제도 소개</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">적극행정공무원 주민 추천</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">적극행정 소식 알림</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">적극행정 법령 유권해석</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">청렴</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">청렴시책</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">청탁금지법 주요사항</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link external-link">청탁금지법 Q&amp;A 검색</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">신고/구매/사용 현황</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">보조금·업무추진비 공개</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">감사결과보고</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">타기관공시송달</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">타기관공시송달</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">공공데이터개방</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">공공데이터개방</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">행정정보공개</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">행정정보 공개제도 소개</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">행정정보 공표목록</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">사전공개자료</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="globalnav-menu-list">
+                                <a href="#none" class="globalnav-menu-link">강남소개</a>
+                                <div class="globalnav-submenu-container">
+                                    <div class="globalnav-submenu-title-box">
+                                        <h3 class="globalnav-submenu-title">강남소개</h3>
+                                    </div>
+                                    <ul class="globalnav-submenu">
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">조성명입니다</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link external-link">조성명입니다.</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">강남구소개</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">강남역사관</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">일반현황</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">행정구역</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">구민의상</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">조직안내</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">조직도</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">조직운영 핵심지표</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">인사운영 현황</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">청사안내</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">구청</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">보건소</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">동주민센터</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">공공시설</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">공공야간약국</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">이재민 임시주거시설(실내구호소)</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">지진옥외대피소</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">민방위 대피시설</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">무더위 쉼터</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">그늘막 설치</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">한파 쉼터</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">동 주민센터</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">여성 안전</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">학교</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">도서관</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">복지시설</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">편의시설</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">민간개방화장실</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">공원</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">무인민원발급기</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">주유소/가스</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">전기차 충전시설(급속)</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">친선우호도시</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">국내 친선우호도시</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">국외 친선우호도시</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">친선우호도시 할인혜택</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">홈페이지이용안내</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">개인정보처리방칭</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">영상정보처리기기운영방침</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">저작권 정책</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">사이트맵</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">관련사이트</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="globalnav-menu-list">
+                                <a href="#none" class="globalnav-menu-link">분야별</a>
+                                <div class="globalnav-submenu-container">
+                                    <div class="globalnav-submenu-title-box">
+                                        <h3 class="globalnav-submenu-title">분야별</h3>
+                                    </div>
+                                    <ul class="globalnav-submenu">
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">기획재정</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">주요업무계획</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">재정공시</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">예산</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">결산</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">공유지관리</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link external-link">자치법규정보</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">세입/세출예산공개</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">정책실명제</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">학술연구용역결과</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">귀국보고서</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">통계</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">세금</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">지방세 안내</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">지방세 환급</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">지방세 압류해제</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">과태료등 압류해제</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link external-link">부동산</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">지방세 납세자보호관 제도</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">납세자 권리헌장</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">문화/관광</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link external-link">강남페스트벌</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link external-link">강남디자인위크</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">강남문화캘린더</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">강남관광정보센터</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link external-link">관광명소</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">문화재</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">전통시장</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">시설안내</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">숙박정보</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">외국인관광 도시민박업</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">복지</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">여성</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">국민기초생활보장</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">저소득층지원정책</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">아동/청소년</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">보육</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">어르신지원정책</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">장애인복지지원</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">주거</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">다문화</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">국가유공자</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">공공야간약국</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">사회복지기관 및 단체</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">기부와 나눔사업</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">산업·일자리·창업</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">중소기업 자금융자 지원</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">혁신인재육성 아카데미</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link external-link">일자리정보</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">일자리공시제</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">착한가게</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">사회적기업</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">대부업</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">도로교통</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">주차</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">자동차</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">영업용택시/화물</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">대중교통활성화</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">보안등가로등</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">도로명주소안내</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">재난안전</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">유형별 재난</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">이재민대피소</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">구민안전보험</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">안전문화운동</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">생활안전지도</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">주택기초소방시설의무설치</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">안전관리자 확인</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">환경</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">양재천</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">대모산</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">구룡산</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">공원</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">기념식수 나무찾기</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">대기관리</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">수질관리</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">쓰레기배출안내</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">의료폐기물</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">에코인프라</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">환경개선부담금</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">도시계획</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">건축정보</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">건축기준 알림방</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">건축인허가및업무공개</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">건축심의정보</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">정보통신사용전검사</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">옥외광고물</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">지구단위계획</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">재건축</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">공동주택</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="globalnav-submenu-list">
+                                            <a href="#none" class="globalnav-submenu-link">스마트도시</a>
+                                            <ul class="globalnav-level3">
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">스마트도시 소개</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">강남구 스마트도시 사업</a></li>
+                                                <li class="globalnav-level3-list"><a href="#none" class="globalnav-level3-link">리빙랩</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="relatedsites-nav" class="">
+                        <ul class="relatedsites-menu">
+                            <li class="relatedsites-item relatedsites-item-main desktop-only">
+                                <a href="index.html" class="relatedsites-menu-link">대표 홈페이지</a>
+                            </li>
+                            <li class="relatedsites-item">
+                                <a href="#none" class="relatedsites-menu-link">보건소</a>
+                                <ul class="relatedsites-list mobile-only">
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">강남구보건소</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="relatedsites-item">
+                                <a href="#none" class="relatedsites-menu-trigger">생활·복지</a>
+                                <ul class="relatedsites-list relatedsites-list-columns">
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">강남복지재단</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">대치노인복지센터</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">역삼재가노인데이케어센터</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">강남지역자활센터</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">역삼노인복지센터</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">압구정노인복지센터</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">강남노인종합복지관</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">논현노인종합복지관</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">강남구청소년상담복지센터</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">강남장애인복지관</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">강남시니어플라자</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">강남구가족센터</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">강남구정신건강복지센터</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">강남세움복지관</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">강남구수어통역센터</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">강남발달장애인평생교육센터</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">청소년심리지원센터사이쉼</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">강남구웰에이징센터</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="relatedsites-item">
+                                <a href="#none" class="relatedsites-menu-trigger">교육·경제</a>
+                                <ul class="relatedsites-list">
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">평생학습</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">강남인강</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">강남구여성능력개발센터</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">일원청소년독서실</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">역삼청소년수련관</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">강남취창업허브센터</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="relatedsites-item">
+                                <a href="#none" class="relatedsites-menu-trigger">문화·관광</a>
+                                <ul class="relatedsites-list">
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">VISIT GANGNAM</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">MEDICAL GANGNAM</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">강남문화재단</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">강남구 통합예약사이트</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">강남구립도서관</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="relatedsites-item">
+                                <a href="#none" class="relatedsites-menu-trigger">강남구의회</a>
+                                <ul class="relatedsites-list">
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">강남구의회</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">강남구의회 회의록검색시스템</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">강남구 청소년의회</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="relatedsites-item">
+                                <a href="#none" class="relatedsites-menu-trigger">동주민센터</a>
+                                <ul class="relatedsites-list relatedsites-list-columns">
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">개포1동</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">개포2동</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">개포3동</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">개포4동</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">논현1동</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">논현2동</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">대치1동</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">대치2동</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">대치4동</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">도곡1동</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">도곡2동</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">삼성1동</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">삼성2동</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">세곡동</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">수서동</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">신사동</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">압구정동</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">역삼1동</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">역삼2동</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">일원본동</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">일원1동</a>
+                                    </li>
+                                    <li class="relatedsites-list-item">
+                                        <a href="#none" class="relatedsites-link">청담동</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="header-menu">
+                    <div class="weather-info" id="weather-slider">
+                        <ul class="slider">
+                            <li class="slide status">
+                                <span class="weather-icon cloudy">구름많음</span> <span class="tempature">19.4&#8451;</span>
+                            </li>
+                            <li class="slide">
+                                미세먼지 <span class="PM10 good">좋음</span>
+                            </li>
+                            <li class="slide">
+                                초미세먼지 <span class="PM25 normal">보통</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#none" class="login">
+                        로그인
+                    </a>
+                    <div class="language">
+                        <button onclick="ToggleLanguage()">
+                            LANGUAGE <i class="xi-caret-down-min"></i>
+                        </button>
+                        <ul class="language-index">
+                            <li><a href="#none">ENGLISH</a></li>
+                        </ul>
+                    </div>
+                    <a href="#none" class="desktop-only">
+                        사이트맵
+                    </a>
+                </div>
+            </div>    
+        </div>        
+        <div class="header-bottom">
+            <div class="container">
+                <div class="mobile-header">
+                    <h1 class="main-icon">
+                        <a href="./index.html" title="홈화면 바로가기">
+                            <img src="./images/강남구청-헤더로고.png" alt="강남구청 로고 - 꿈이 모이는 도시 미래를 그리는 강남">
+                        </a>
+                    </h1>
+                    <div class="menu-trigger mobile-only">
+                        <button type="button" aria-label="메뉴 여닫기 버튼" id="menuBtn">
+                            <i class="hamburger-btn"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="search">
+                    <form id="search" action="" method="get">
+                        <input type="text" aria-label="검색창" placeholder="검색어를 입력하세요">
+                        <button aria-label="검색 버튼" type="submit">
+                            <img src="./images/btn-sch.png" alt="검색창 아이콘">
+                        </button>
+                    </form>
+                    <ul class="mobile-only suggest-terms">
+                        <li class="suggest-list"><a href="#none">조직도</a></li>
+                        <li class="suggest-list"><a href="#none">청사안내</a></li>
+                        <li class="suggest-list"><a href="#none">동주민센터</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="index-banner">
+        <h2 class="blind">메인 배너 영역</h2>
+        <div class="container">
+            <div class="vision-info desktop-only">
+                <ul class="vision-info-list">
+                    <li class="vision-info-item vision-info-title">
+                        <a href="#none">
+                            민선 8기 비전 <span class="arrow-circle"><i class="xi-arrow-right"></i></span>
+                        </a>
+                    </li>
+                    <li class="vision-info-item">
+                        <a href="#">혁신성장</a>
+                    </li>
+                    <li class="vision-info-item">
+                        <a href="#">문화생태</a>
+                    </li>
+                    <li class="vision-info-item">
+                        <a href="#">안심행복</a>
+                    </li>
+                    <li class="vision-info-item">
+                        <a href="#">공감동행</a>
+                    </li>
+                    <li class="vision-info-item">
+                        <a href="#">초(超)밀착</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="chief-info">
+                <h3 class="chief-greeting">
+                    <span class="upper-point">구</span><span class="upper-point">민</span>과 함께하는<br>
+                    강남구청장 <br>
+                    <span class="chief-name">조성명</span>입니다
+                </h3>
+                <div class="chief-img-box">
+                    <img src="./images/강남구청장 조성명.png" alt="강남구청장 조성명">
+                </div>
+                <ul class="chief-info-list">
+                    <li class="chief-info-item">
+                        <a href="#none">인사말</a>
+                    </li>
+                    <li class="chief-info-item">
+                        <a href="#none">구청장에게바란다</a>
+                    </li>
+                    <li class="chief-info-item">
+                        <a href="#none">언론인터뷰</a>
+                    </li>
+                    <li class="chief-info-item">
+                        <a href="#none">공약</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <script src="/js/global.js"></script>
+</body>
+</html>
