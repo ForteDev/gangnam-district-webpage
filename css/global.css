@@ -421,7 +421,8 @@
         justify-content: space-between;
     }
     #header .header-bottom .mobile-header .main-icon { 
-        height: 45px;
+        max-height: 80px;
+        height: max(45px, 15vw);
         transition: visibility .5s step-end;
     }
     .mobile-globalnav-open #header .header-bottom .mobile-header .main-icon{
