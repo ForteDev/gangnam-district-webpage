@@ -21,6 +21,7 @@ input { border: none; }
         min-width: 320px;
         max-width: 720px;
         padding: 0 5%;
+        box-sizing: content-box;
     }
     body.scroll-lock{
         overflow: hidden;
