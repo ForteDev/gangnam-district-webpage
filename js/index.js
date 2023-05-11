@@ -9,6 +9,9 @@ class Swiper {
     lastIdx = 0;
     itemNum = 0;
     itemWidth = 0;
+    slideDuraition = 680;
+
+    isLastSlide = false;
 
     constructor(){
         if(arguments.length == 1){
@@ -35,18 +38,56 @@ class Swiper {
         this.setItemWidth();
         this.placeSlide(this.currentIdx);
     }
+
     nextSlide(){
         let targetIdx = this.currentIdx + this.numOfMoving;
-        if(targetIdx + this.numOfStaging > this.lastIdx){
+        if(this.isLastSlide){
+            for(let i = 0; i < this.numOfStaging; i++){
+                this.swiperBox.appendChild(this.swiperBox.children[0]);
+            }
+            this.placeSlide(this.currentIdx - this.numOfMoving);
+            
+            setTimeout(()=>{ 
+                this.moveSlide(this.lastIdx - this.numOfStaging + 1);
+            },10);
+            
+            setTimeout(()=>{
+                for(let i = 0; i < this.numOfStaging; i++){
+                    this.swiperBox.prepend(this.swiperBox.children[this.lastIdx]);
+                }
+                this.placeSlide(0);
+            }, this.slideDuraition);
+            this.currentIdx = 0;
+            this.isLastSlide = false;
+            return;
+        } else if(targetIdx + this.numOfStaging > this.lastIdx){
             targetIdx = this.lastIdx - this.numOfStaging + 1;
-        }
+            this.isLastSlide = true;
+        } 
         this.moveSlide(targetIdx);
         this.currentIdx = targetIdx;
+        
     }
     prevSlide(){
         let targetIdx = this.currentIdx - this.numOfMoving;
         if(targetIdx < 0){
-            targetIdx = 0;
+            for(let i = 0; i < this.numOfStaging; i++){
+                this.swiperBox.prepend(this.swiperBox.children[this.lastIdx]);
+            }
+            this.placeSlide(this.numOfStaging);
+            setTimeout(() => {
+                this.moveSlide(0);
+            }, 10);
+            
+            setTimeout(() => {
+                for(let i = 0; i < this.numOfStaging; i++){
+                    this.swiperBox.append(this.swiperBox.children[0]);
+                }
+                this.placeSlide(this.lastIdx - this.numOfStaging + 1);
+            }, this.slideDuraition);
+            this.currentIdx = this.lastIdx - this.numOfStaging + 1;
+            this.isLastSlide = true;
+            return;
         }
         this.moveSlide(targetIdx);
         this.currentIdx = targetIdx;
@@ -55,7 +96,8 @@ class Swiper {
     moveSlide(targetIdx){
         this.swiperBox.style.left = `${-this.itemWidth * targetIdx}px`
     }
-    //placeSlide는 애니메이션이 없음.
+
+    //placeSlide는 애니메이션이 없이 슬라이드 움직임.
     placeSlide(targetIdx){
         this.swiperBox.classList.remove("slidable");
         this.swiperBox.style.left = `${-this.itemWidth * targetIdx}px`
@@ -63,6 +105,8 @@ class Swiper {
             this.swiperBox.classList.add("slidable");    
         }, 10);
     }
+
+    // 핸들러 모음
     handleNextBtn = () => { this.nextSlide(); }
     handlePrevBtn = () => { this.prevSlide(); }
     handleResize = () => { this.resizeSwiper(); }
