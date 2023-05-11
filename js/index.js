@@ -68,6 +68,7 @@ class Swiper {
         this.currentIdx = targetIdx;
         
     }
+    
     prevSlide(){
         let targetIdx = this.currentIdx - this.numOfMoving;
         if(targetIdx < 0){
