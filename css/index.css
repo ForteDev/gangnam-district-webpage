@@ -128,12 +128,15 @@
     background: #f2f2f2;
 }
 #main-info .main-service .swiper-button{
+    height: 100%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 50;
     font-size: 32px;
     font-weight: 700;
     color: var(--main-color);
+    background: #f2f2f2;
 }
 #main-info .main-service .swiper-button-prev{
     left: 0;
@@ -143,12 +146,17 @@
 }
 #main-info .main-service .frame{
     overflow: hidden;
+    padding: 0 2%;
 }
 #main-info .main-service .frame #main-service-swiper{
+    position: relative;
+    left: 0;
     display: flex;
     align-items: center;
-    padding: 0 2%;
     height: 120px;
+}
+#main-info .main-service .frame #main-service-swiper.slidable{
+    transition: left 0.5s 80ms;
 }
 #main-service-swiper .swiper-item{
     flex-shrink: 0;
