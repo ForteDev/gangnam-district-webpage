@@ -31,33 +31,41 @@ class Swiper {
     setItemWidth(){
         this.itemWidth = this.swiperBox.children[0].getClientRects()[0].width;
     }
+    resizeSwiper(){
+        this.setItemWidth();
+        this.placeSlide(this.currentIdx);
+    }
     nextSlide(){
         let targetIdx = this.currentIdx + this.numOfMoving;
-        
         if(targetIdx + this.numOfStaging > this.lastIdx){
             targetIdx = this.lastIdx - this.numOfStaging + 1;
         }
-
-        this.moveSlide(-this.itemWidth * targetIdx);
+        this.moveSlide(targetIdx);
         this.currentIdx = targetIdx;
     }
-
     prevSlide(){
         let targetIdx = this.currentIdx - this.numOfMoving;
         if(targetIdx < 0){
             targetIdx = 0;
         }
-        this.moveSlide(-this.itemWidth * targetIdx);
+        this.moveSlide(targetIdx);
         this.currentIdx = targetIdx;
     }
 
-    moveSlide(leftValue){
-        this.swiperBox.style.left = `${leftValue}px`
+    moveSlide(targetIdx){
+        this.swiperBox.style.left = `${-this.itemWidth * targetIdx}px`
     }
-
+    //placeSlide는 애니메이션이 없음.
+    placeSlide(targetIdx){
+        this.swiperBox.classList.remove("slidable");
+        this.swiperBox.style.left = `${-this.itemWidth * targetIdx}px`
+        setTimeout(() => {
+            this.swiperBox.classList.add("slidable");    
+        }, 10);
+    }
     handleNextBtn = () => { this.nextSlide(); }
     handlePrevBtn = () => { this.prevSlide(); }
-    handleResize = () => { this.setItemWidth();}
+    handleResize = () => { this.resizeSwiper(); }
 }
 
 const serviceSwiper = new Swiper(document.getElementById("main-service-swiper"));
@@ -66,4 +74,4 @@ serviceSwiper.setPrevBtn(document.querySelector(".main-service .swiper-button-pr
 
 serviceSwiper.nextBtn.addEventListener("click", serviceSwiper.handleNextBtn);
 serviceSwiper.prevBtn.addEventListener("click", serviceSwiper.handlePrevBtn);
-console.log(serviceSwiper.swiperBox.style.left);
+window.addEventListener("resize", serviceSwiper.handleResize);
