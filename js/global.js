@@ -20,7 +20,7 @@ const maxMoblieWidth = 1080;
 let existsMobileListener = false;
 let existsDesktopListener = false;
 
-window.addEventListener("load", setGlobalHaandlers);
+window.addEventListener("load", setGlobalHandlers);
 window.addEventListener("resize", setGlobalHandlers);
 /* 이벤트 핸들러 모음 */
 function setGlobalHandlers(){ //Main 핸들러 다른 핸들러 설정을 담당

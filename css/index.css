@@ -141,10 +141,12 @@
 #main-info .main-service .swiper-button-next{
     right: 0;
 }
+#main-info .main-service .frame{
+    overflow: hidden;
+}
 #main-info .main-service .frame #main-service-swiper{
     display: flex;
     align-items: center;
-    /* justify-content: space-evenly; */
     padding: 0 2%;
     height: 120px;
 }
@@ -164,6 +166,8 @@
     font-weight: 500;
     color: #666;
 }
+
+
 @media (max-width: 1080px){
     #index-banner .container{
         display: block;
