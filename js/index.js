@@ -6,8 +6,10 @@ class Swiper {
     numOfStaging = 9;
     numOfMoving = 9;
     currentIdx = 0;
-    numOfItems = 0;
-    
+    lastIdx = 0;
+    itemNum = 0;
+    itemWidth = 0;
+
     constructor(){
         if(arguments.length == 1){
             this.setSwiperBox(arguments[0]);
@@ -22,27 +24,40 @@ class Swiper {
     }
     setSwiperBox(swiperBox){
         this.swiperBox = swiperBox;
-        this.numOfItems = this.swiperBox.children.length;
+        this.itemNum = this.swiperBox.children.length;
+        this.lastIdx = this.itemNum - 1;
+        this.setItemWidth();
     }
-
+    setItemWidth(){
+        this.itemWidth = this.swiperBox.children[0].getClientRects()[0].width;
+    }
     nextSlide(){
-        const targetIdx = this.currentIdx + this.numOfMoving;
-        console.log(targetIdx);
-        if(targetIdx > this.numOfItems - 1){
-
+        let targetIdx = this.currentIdx + this.numOfMoving;
+        
+        if(targetIdx + this.numOfStaging > this.lastIdx){
+            targetIdx = this.lastIdx - this.numOfStaging + 1;
         }
+
+        this.moveSlide(-this.itemWidth * targetIdx);
+        this.currentIdx = targetIdx;
     }
 
     prevSlide(){
-        const targetIdx = this.currentIdx - this.numOfMoving;
-        console.log(targetIdx);
+        let targetIdx = this.currentIdx - this.numOfMoving;
         if(targetIdx < 0){
-            console.log("마지막항목으로");
+            targetIdx = 0;
         }
+        this.moveSlide(-this.itemWidth * targetIdx);
+        this.currentIdx = targetIdx;
+    }
+
+    moveSlide(leftValue){
+        this.swiperBox.style.left = `${leftValue}px`
     }
 
     handleNextBtn = () => { this.nextSlide(); }
     handlePrevBtn = () => { this.prevSlide(); }
+    handleResize = () => { this.setItemWidth();}
 }
 
 const serviceSwiper = new Swiper(document.getElementById("main-service-swiper"));
@@ -51,3 +66,4 @@ serviceSwiper.setPrevBtn(document.querySelector(".main-service .swiper-button-pr
 
 serviceSwiper.nextBtn.addEventListener("click", serviceSwiper.handleNextBtn);
 serviceSwiper.prevBtn.addEventListener("click", serviceSwiper.handlePrevBtn);
+console.log(serviceSwiper.swiperBox.style.left);
