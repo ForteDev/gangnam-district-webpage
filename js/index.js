@@ -9,7 +9,6 @@ class Swiper {
     numOfItems = 0;
     
     constructor(){
-        this.currentIdx = this.numOfStaging - 1;
         if(arguments.length == 1){
             this.setSwiperBox(arguments[0]);
         }
@@ -28,12 +27,18 @@ class Swiper {
 
     nextSlide(){
         const targetIdx = this.currentIdx + this.numOfMoving;
-        console.log(this.currentIdx);
+        console.log(targetIdx);
+        if(targetIdx > this.numOfItems - 1){
+
+        }
     }
+
     prevSlide(){
         const targetIdx = this.currentIdx - this.numOfMoving;
         console.log(targetIdx);
-
+        if(targetIdx < 0){
+            console.log("마지막항목으로");
+        }
     }
 
     handleNextBtn = () => { this.nextSlide(); }
@@ -44,8 +49,5 @@ const serviceSwiper = new Swiper(document.getElementById("main-service-swiper"))
 serviceSwiper.setNextBtn(document.querySelector(".main-service .swiper-button-next"));
 serviceSwiper.setPrevBtn(document.querySelector(".main-service .swiper-button-prev"));
 
-console.log(serviceSwiper.numOfItems);
-
 serviceSwiper.nextBtn.addEventListener("click", serviceSwiper.handleNextBtn);
 serviceSwiper.prevBtn.addEventListener("click", serviceSwiper.handlePrevBtn);
-
