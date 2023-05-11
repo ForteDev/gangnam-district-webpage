@@ -20,10 +20,10 @@ const maxMoblieWidth = 1080;
 let existsMobileListener = false;
 let existsDesktopListener = false;
 
-window.addEventListener("load", setHandlers);
-window.addEventListener("resize", setHandlers);
+window.addEventListener("load", setGlobalHaandlers);
+window.addEventListener("resize", setGlobalHandlers);
 /* 이벤트 핸들러 모음 */
-function setHandlers(){ //Main 핸들러 다른 핸들러 설정을 담당
+function setGlobalHandlers(){ //Main 핸들러 다른 핸들러 설정을 담당
     const windowWidth = window.innerWidth;
     if(windowWidth <= maxMoblieWidth){ // 모바일 기기 전용 이벤트 리스너
         if(existsDesktopListener){ // 데스크탑 이벤트 리스너 삭제
