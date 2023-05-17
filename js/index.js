@@ -37,6 +37,7 @@ class Swiper {
     resizeSwiper(){
         this.setItemWidth();
         this.placeSlide(this.currentIdx);
+
     }
 
     nextSlide(){
@@ -122,3 +123,29 @@ serviceSwiper.setPrevBtn(document.querySelector(".main-service .swiper-button-pr
 serviceSwiper.nextBtn.addEventListener("click", serviceSwiper.handleNextBtn);
 serviceSwiper.prevBtn.addEventListener("click", serviceSwiper.handlePrevBtn);
 window.addEventListener("resize", serviceSwiper.handleResize);
+window.addEventListener("resize", setIndexHandlers);
+window.addEventListener("load", setIndexHandlers);
+
+function setIndexHandlers(){ //Main 핸들러 다른 핸들러 설정을 담당
+    const windowWidth = window.innerWidth;
+    if(windowWidth <= maxMoblieWidth){ // 모바일 기기 전용 이벤트 리스너
+        serviceSwiper.numOfMoving = 4;
+        serviceSwiper.numOfStaging = 4;
+
+        if(existsDesktopListener){ // 데스크탑 이벤트 리스너 삭제
+
+        }
+        if(!existsMobileListener){ // 모바일 이벤트 리스너 추가
+
+        }
+    } else { // 데스크탑 기기 전용 이벤트 리스너
+        serviceSwiper.numOfMoving = 9;
+        serviceSwiper.numOfStaging = 9;
+        if(existsMobileListener){ // 모바일 이벤트 리스너 삭제
+
+        }
+        if(!existsDesktopListener){ // 데스크탑 이벤트 리스너 추가
+
+        }
+    }
+}

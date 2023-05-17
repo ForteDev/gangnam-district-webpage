@@ -145,7 +145,7 @@
     right: 0;
 }
 #main-info .main-service .frame{
-    /* overflow: hidden; */
+    overflow: hidden;
     padding: 0 2%;
 }
 #main-info .main-service .frame #main-service-swiper{
@@ -213,56 +213,39 @@
     }
 
     #main-info{
-        margin-top: 26px;
+        margin-top: 37px;
     }
-    #main-info .main-service{
-        background: #f2f2f2;
-    }
-    #main-info .main-service .swiper-button{
-        height: 100%;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 50;
-        font-size: 32px;
-        font-weight: 700;
-        color: var(--main-color);
-        background: #f2f2f2;
-    }
-    #main-info .main-service .swiper-button-prev{
-        left: 0;
-    }
-    #main-info .main-service .swiper-button-next{
-        right: 0;
-    }
-    #main-info .main-service .frame{
-        /* overflow: hidden; */
-        padding: 0 2%;
-    }
-    #main-info .main-service .frame #main-service-swiper{
-        position: relative;
-        left: 0;
+    #main-info .main-service .swiper-title{
+        height: 55px;
         display: flex;
-        align-items: center;
-        height: 120px;
-    }
-    #main-info .main-service .frame #main-service-swiper.slidable{
-        transition: left 0.6s 80ms;
-    }
-    #main-service-swiper .swiper-item{
-        flex-shrink: 0;
-        width: calc(100% / 4);
-    }
-    #main-service-swiper .swiper-item .swiper-item-link {
-        display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
-        row-gap: 10px;
+        font-size: 22px;
+        color: #003476;
+    }
+    #main-info .main-service .swiper-title strong{
+        color: var(--main-color);
+    }
+    #main-info .main-service .swiper-button{
+        height: calc(100% - 55px);
+        top: unset;
+        bottom: 0;
+        transform: translateY(0);
+    }
+    #main-info .main-service .frame{
+        padding: 0 calc(32px - 5vw);
+    }
+    #main-info .main-service .frame #main-service-swiper{
+        height: auto;
+        padding: 15px 0;
+        align-items: flex-start;
+    }
+    #main-service-swiper .swiper-item{
+        width: calc(100% / 4);
     }
     #main-service-swiper .swiper-item .swiper-item-link .swiper-item-title{
-        font-size: 14px;
         font-weight: 500;
-        color: #666;
+        color: #555;
+        text-align: center;
     }
 }
