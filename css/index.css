@@ -145,7 +145,7 @@
     right: 0;
 }
 #main-info .main-service .frame{
-    overflow: hidden;
+    /* overflow: hidden; */
     padding: 0 2%;
 }
 #main-info .main-service .frame #main-service-swiper{

@@ -49,7 +49,7 @@ class Swiper {
             
             setTimeout(()=>{ 
                 this.moveSlide(this.lastIdx - this.numOfStaging + 1);
-            },10);
+            },20);
             
             setTimeout(()=>{
                 for(let i = 0; i < this.numOfStaging; i++){
@@ -66,19 +66,21 @@ class Swiper {
         } 
         this.moveSlide(targetIdx);
         this.currentIdx = targetIdx;
-        
     }
     
     prevSlide(){
         let targetIdx = this.currentIdx - this.numOfMoving;
-        if(targetIdx < 0){
+        if(this.isLastSlide){
+            targetIdx = this.currentIdx - this.itemNum % this.numOfMoving; // 14 - 22 % 9 = 10
+            this.isLastSlide = false;
+        }else if(targetIdx < 0){
             for(let i = 0; i < this.numOfStaging; i++){
                 this.swiperBox.prepend(this.swiperBox.children[this.lastIdx]);
             }
             this.placeSlide(this.numOfStaging);
             setTimeout(() => {
                 this.moveSlide(0);
-            }, 10);
+            }, 20);
             
             setTimeout(() => {
                 for(let i = 0; i < this.numOfStaging; i++){
