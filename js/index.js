@@ -72,7 +72,11 @@ class Swiper {
     prevSlide(){
         let targetIdx = this.currentIdx - this.numOfMoving;
         if(this.isLastSlide){
-            targetIdx = this.currentIdx - this.itemNum % this.numOfMoving; // 14 - 22 % 9 = 10
+            if(this.itemNum % this.numOfMoving == 0){
+                targetIdx = this.currentIdx - this.numOfMoving;
+            } else {
+                targetIdx = this.currentIdx - this.itemNum % this.numOfMoving; 
+            }
             this.isLastSlide = false;
         }else if(targetIdx < 0){
             for(let i = 0; i < this.numOfStaging; i++){
@@ -123,8 +127,18 @@ serviceSwiper.setPrevBtn(document.querySelector(".main-service .swiper-button-pr
 serviceSwiper.nextBtn.addEventListener("click", serviceSwiper.handleNextBtn);
 serviceSwiper.prevBtn.addEventListener("click", serviceSwiper.handlePrevBtn);
 window.addEventListener("resize", serviceSwiper.handleResize);
+
 window.addEventListener("resize", setIndexHandlers);
 window.addEventListener("load", setIndexHandlers);
+
+const categorySwiper1 = new Swiper(document.querySelector("#main-info .announcement .category-swiper01 .category-swiper"));
+categorySwiper1.numOfMoving = 4;
+categorySwiper1.numOfStaging = 4;
+categorySwiper1.setNextBtn(document.querySelector("#main-info .announcement-body .swiper-button-next"));
+categorySwiper1.setPrevBtn(document.querySelector("#main-info .announcement-body .swiper-button-prev"));
+
+categorySwiper1.nextBtn.addEventListener("click", categorySwiper1.handleNextBtn);
+categorySwiper1.prevBtn.addEventListener("click", categorySwiper1.handlePrevBtn);
 
 function setIndexHandlers(){ //Main 핸들러 다른 핸들러 설정을 담당
     const windowWidth = window.innerWidth;

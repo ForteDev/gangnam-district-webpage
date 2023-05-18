@@ -10,8 +10,8 @@
         },
         "index.css": {
           "type": "-",
-          "size": 5947,
-          "lmtime": 1683796142112,
+          "size": 10826,
+          "lmtime": 1684311362739,
           "modified": false
         },
         "layout.css": {
@@ -871,8 +871,8 @@
       },
       "index.html": {
         "type": "-",
-        "size": 99966,
-        "lmtime": 1683790967567,
+        "size": 109040,
+        "lmtime": 1684310431980,
         "modified": false
       },
       "index1.html": {
@@ -890,8 +890,8 @@
         },
         "index.js": {
           "type": "-",
-          "size": 4076,
-          "lmtime": 1683796142562,
+          "size": 5880,
+          "lmtime": 1684312329995,
           "modified": false
         },
         "s.js": {
