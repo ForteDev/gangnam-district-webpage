@@ -15,11 +15,9 @@ II) Swiper 객체 초기화 관련
 
 
 /* 추가해야 하는 기능
-
-    1. itemWidth는 아이템의 너비만 불러옴. margin이나 gap이 존재시 인식하지 못해서 슬라이딩시 문제가 발생
+    1. 모바일 환경에서 numOfStaging과 numOfMoving이 변경되는 기능을 추가해야함.
     2. 비동기식 코드 실행 때문인지 몰라도 swiper 이전/다음 버튼이 이상동작하는 현상을 수정해야함.
     3. 스와이퍼 기능 (드래그 시 움직이는)
-    
 */
 class Swiper {
     // HTML 요소 객체 변수
@@ -28,6 +26,11 @@ class Swiper {
     swiperBox = null;
     
     // swiper 설정 관련 변수
+    deskMoving = null;
+    deskStaging = null;
+    mobMoving = null;
+    mobStaging = null;
+
     numOfStaging = 0;
     numOfMoving = 0;
     currentIdx = 0;
@@ -38,7 +41,7 @@ class Swiper {
 
     // 객체 함수 실행 관련 변수
     isLastSlide = false;
-    setsMobile = false;
+    switchMedia = false;
 
     //생성자 
     constructor(){
@@ -70,28 +73,61 @@ class Swiper {
             console.log("swiperBox의 너비가 정의되어 있지 않습니다.\n display:none;속성 때문에 정의되지 않은 것일 수 있습니다.");
         }
     }
+    setNumOfMoving(){
+        if(arguments.length == 1){
+            this.numOfMoving = arguments[0];
+        } else if(arguments.length == 0){
+            console.log("ERROR: setNumOfMoving 함수에는 반드시 인자가 입력되어야 합니다.");
+        } else {
+            this.deskMoving = arguments[0];
+            this.mobMoving = arguments[1];
+            this.switchMedia = true;
+        }
+        this.resizeSwiper();
+    }
+    
+    setNumOfStaging(){
+        if(arguments.length == 1){
+            this.numOfStaging = arguments[0];
+        } else if(arguments.length == 0){
+            console.log("ERROR: setNumOfMoving 함수에는 반드시 인자가 입력되어야 합니다.");
+        } else {
+            this.deskStaging = arguments[0];
+            this.mobStaging = arguments[1];
+            this.switchMedia = true;
+        }
+        this.resizeSwiper();
+    }
+
     resizeSwiper(){
+        //모바일 설정이 되어 있는 경우에만 실행
+        // switchMedia 설정을 해야함.
+        if(this.mobMoving != null || this.mobStaging != null){ 
+            try{
+                if(!this.switchMedia && maxMoblieWidth > window.innerWidth){
+                    this.setMobSwiper();
+                } else if(this.switchMedia && maxMoblieWidth <= window.innerWidth){
+                    this.setDesktopSwiper();
+                }
+            } catch(err) {
+                console.log(err.name);
+                console.log("maxMoblieWidth가 정의되어 있지 않습니다. maxMobileWidth를 전역변수로 설정하십시오.");
+            }
+        }
+        
         this.setItemWidth();
         this.placeSlide(this.currentIdx);
-        try{
-            if(!this.setsMobile && maxMoblieWidth > window.innerWidth){
-                this.setMobSwiper();
-            } else if(this.setsMobile && maxMoblieWidth <= window.innerWidth){
-                this.setDesktopSwiper();
-            }
-        } catch(err) {
-            console.log(err.name);
-            console.log("maxMoblieWidth가 정의되어 있지 않습니다. maxMobileWidth를 전역변수로 설정하십시오.");
-        }
     }
 
     setMobSwiper(){
-        console.log("Hi");
-        this.setsMobile = true;
+        this.numOfMoving = this.mobMoving;
+        this.numOfStaging = this.mobStaging;
+        this.switchMedia = false;
     }
     setDesktopSwiper(){
-        console.log("i am PC");
-        this.setsMobile = false;
+        this.numOfMoving = this.deskMoving;
+        this.numOfStaging = this.deskStaging;
+        this.switchMedia = false;
     }
 
     nextSlide(){
@@ -175,8 +211,8 @@ class Swiper {
 const serviceSwiper = new Swiper(document.getElementById("main-service-swiper"));
 serviceSwiper.setNextBtn(document.querySelector(".main-service .swiper-button-next"));
 serviceSwiper.setPrevBtn(document.querySelector(".main-service .swiper-button-prev"));
-serviceSwiper.numOfMoving = 9;
-serviceSwiper.numOfStaging = 9;
+serviceSwiper.setNumOfMoving(9, 4);
+serviceSwiper.setNumOfStaging(9, 4);
 
 const categorySwiper1 = new Swiper(document.querySelector("#main-info .announcement .category-swiper01 .category-swiper"));
 categorySwiper1.numOfMoving = 4;
