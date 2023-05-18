@@ -65,10 +65,9 @@ class Swiper {
     }
     setItemWidth(){
         try{
-            // this.itemWidth = this.swiperBox.children[0].getClientRects()[0].width;
             this.itemWidth = this.swiperBox.scrollWidth / this.itemNum;
         } catch(err){
-            console.log("swiperBox의 자식의 너비가 정의되어 있지 않습니다.\n display:none;속성 때문에 정의되지 않은 것일 수 있습니다.");
+            console.log("swiperBox의 너비가 정의되어 있지 않습니다.\n display:none;속성 때문에 정의되지 않은 것일 수 있습니다.");
         }
     }
     resizeSwiper(){
