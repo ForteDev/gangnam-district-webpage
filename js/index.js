@@ -48,6 +48,7 @@ class Swiper {
         this.itemNum = this.swiperBox.children.length;
         this.lastIdx = this.itemNum - 1;
         this.setItemWidth();
+        window.addEventListener("resize", this.handleResize);
     }
     setItemWidth(){
         this.itemWidth = this.swiperBox.children[0].getClientRects()[0].width;
@@ -55,7 +56,6 @@ class Swiper {
     resizeSwiper(){
         this.setItemWidth();
         this.placeSlide(this.currentIdx);
-
     }
 
     nextSlide(){
@@ -142,10 +142,7 @@ const serviceSwiper = new Swiper(document.getElementById("main-service-swiper"))
 serviceSwiper.setNextBtn(document.querySelector(".main-service .swiper-button-next"));
 serviceSwiper.setPrevBtn(document.querySelector(".main-service .swiper-button-prev"));
 
-window.addEventListener("resize", serviceSwiper.handleResize);
-// serviceSwiper.nextBtn.addEventListener("click", serviceSwiper.handleNextBtn);
-// serviceSwiper.prevBtn.addEventListener("click", serviceSwiper.handlePrevBtn);
-
+// window.addEventListener("resize", serviceSwiper.handleResize);
 // window.addEventListener("resize", setIndexHandlers);
 // window.addEventListener("load", setIndexHandlers);
 
