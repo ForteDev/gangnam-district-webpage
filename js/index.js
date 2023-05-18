@@ -8,26 +8,32 @@ I) 변수 설명
 
 II) Swiper 객체 초기화 관련
     1. 객체 생성자를 사용해 swiperBox를 초기화할 수 있다. (선택사항)
+    1-1. 생성자를 사용해 초기화하지 않는다면 반드시 setSwiperBox()를 사용해 swiperBox를 초기화해야 한다. 그래야 스와이퍼 관련 속성 변수와 resize 이벤트 리스너가 등록된다.
     2. 객체 사용자는 반드시 swiperBox와 numOfStaging과 numOfMoving을 초기화해야 한다.(기본 설정값 0)
-    3. 
+    3. prev버튼과 next 버튼은 반드시 setPrecBtn() setNextBtn() 함수를 사용해서 초기화해야한다. 초기화시 자동으로 이벤트리스너가 등록된다.
 */
 
 
 class Swiper {
+    // HTML 요소 객체 변수
     prevBtn = null;
     nextBtn = null;
     swiperBox = null;
     
-    numOfStaging = 9;
-    numOfMoving = 9;
+    // swiper 설정 관련 변수
+    numOfStaging = 0;
+    numOfMoving = 0;
     currentIdx = 0;
     lastIdx = 0;
     itemNum = 0;
     itemWidth = 0;
     slideDuraition = 680;
 
+    // 객체 함수 실행 관련 변수
     isLastSlide = false;
+    setsMobile = false;
 
+    //생성자 
     constructor(){
         if(arguments.length == 1){
             this.setSwiperBox(arguments[0]);
@@ -56,8 +62,27 @@ class Swiper {
     resizeSwiper(){
         this.setItemWidth();
         this.placeSlide(this.currentIdx);
+        try{
+            if(!this.setsMobile && maxMoblieWidth > window.innerWidth){
+                this.setMobSwiper();
+            } else if(this.setsMobile && maxMoblieWidth <= window.innerWidth){
+                this.setDesktopSwiper();
+            }
+        } catch(err) {
+            console.log(err.name);
+            console.log("maxMoblieWidth가 정의되어 있지 않습니다. maxMobileWidth를 전역변수로 설정하십시오.");
+        }
     }
 
+    setMobSwiper(){
+        console.log("Hi");
+        this.setsMobile = true;
+    }
+
+    setDesktopSwiper(){
+        console.log("i am PC");
+        this.setsMobile = false;
+    }
     nextSlide(){
         let targetIdx = this.currentIdx + this.numOfMoving;
         if(this.isLastSlide){
@@ -86,7 +111,6 @@ class Swiper {
         this.moveSlide(targetIdx);
         this.currentIdx = targetIdx;
     }
-    
     prevSlide(){
         let targetIdx = this.currentIdx - this.numOfMoving;
         if(this.isLastSlide){
@@ -122,7 +146,6 @@ class Swiper {
     moveSlide(targetIdx){
         this.swiperBox.style.left = `${-this.itemWidth * targetIdx}px`
     }
-
     //placeSlide는 애니메이션이 없이 슬라이드 움직임.
     placeSlide(targetIdx){
         this.swiperBox.classList.remove("slidable");
@@ -141,8 +164,10 @@ class Swiper {
 const serviceSwiper = new Swiper(document.getElementById("main-service-swiper"));
 serviceSwiper.setNextBtn(document.querySelector(".main-service .swiper-button-next"));
 serviceSwiper.setPrevBtn(document.querySelector(".main-service .swiper-button-prev"));
+serviceSwiper.numOfMoving = 9;
+serviceSwiper.numOfStaging = 9;
 
-// window.addEventListener("resize", serviceSwiper.handleResize);
+
 // window.addEventListener("resize", setIndexHandlers);
 // window.addEventListener("load", setIndexHandlers);
 
