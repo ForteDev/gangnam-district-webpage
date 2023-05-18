@@ -14,6 +14,13 @@ II) Swiper 객체 초기화 관련
 */
 
 
+/* 추가해야 하는 기능
+
+    1. 스와이퍼가 display:none이 되어 있을 경우 객체 생성의 오류가 발생함. 수정해야함.
+    2. itemWidth는 아이템의 너비만 불러옴. margin이나 gap이 존재시 인식하지 못해서 슬라이딩시 문제가 발생
+    3. 스와이퍼 기능 (드래그 시 움직이는)
+    
+*/
 class Swiper {
     // HTML 요소 객체 변수
     prevBtn = null;
@@ -57,7 +64,11 @@ class Swiper {
         window.addEventListener("resize", this.handleResize);
     }
     setItemWidth(){
-        this.itemWidth = this.swiperBox.children[0].getClientRects()[0].width;
+        try{
+            this.itemWidth = this.swiperBox.children[0].getClientRects()[0].width;
+        } catch(err){
+            console.log("swiperBox의 자식의 너비가 정의되어 있지 않습니다.\n display:none;속성 때문에 정의되지 않은 것일 수 있습니다.");
+        }
     }
     resizeSwiper(){
         this.setItemWidth();
@@ -78,11 +89,11 @@ class Swiper {
         console.log("Hi");
         this.setsMobile = true;
     }
-
     setDesktopSwiper(){
         console.log("i am PC");
         this.setsMobile = false;
     }
+
     nextSlide(){
         let targetIdx = this.currentIdx + this.numOfMoving;
         if(this.isLastSlide){
@@ -167,39 +178,8 @@ serviceSwiper.setPrevBtn(document.querySelector(".main-service .swiper-button-pr
 serviceSwiper.numOfMoving = 9;
 serviceSwiper.numOfStaging = 9;
 
-
-// window.addEventListener("resize", setIndexHandlers);
-// window.addEventListener("load", setIndexHandlers);
-
-// const categorySwiper1 = new Swiper(document.querySelector("#main-info .announcement .category-swiper01 .category-swiper"));
-// categorySwiper1.numOfMoving = 4;
-// categorySwiper1.numOfStaging = 4;
-// categorySwiper1.setNextBtn(document.querySelector("#main-info .announcement-body .swiper-button-next"));
-// categorySwiper1.setPrevBtn(document.querySelector("#main-info .announcement-body .swiper-button-prev"));
-
-// categorySwiper1.nextBtn.addEventListener("click", categorySwiper1.handleNextBtn);
-// categorySwiper1.prevBtn.addEventListener("click", categorySwiper1.handlePrevBtn);
-
-// function setIndexHandlers(){ //Main 핸들러 다른 핸들러 설정을 담당
-//     const windowWidth = window.innerWidth;
-//     if(windowWidth <= maxMoblieWidth){ // 모바일 기기 전용 이벤트 리스너
-//         serviceSwiper.numOfMoving = 4;
-//         serviceSwiper.numOfStaging = 4;
-
-//         if(existsDesktopListener){ // 데스크탑 이벤트 리스너 삭제
-
-//         }
-//         if(!existsMobileListener){ // 모바일 이벤트 리스너 추가
-
-//         }
-//     } else { // 데스크탑 기기 전용 이벤트 리스너
-//         serviceSwiper.numOfMoving = 9;
-//         serviceSwiper.numOfStaging = 9;
-//         if(existsMobileListener){ // 모바일 이벤트 리스너 삭제
-
-//         }
-//         if(!existsDesktopListener){ // 데스크탑 이벤트 리스너 추가
-
-//         }
-//     }
-// }
+const categorySwiper1 = new Swiper(document.querySelector("#main-info .announcement .category-swiper01 .category-swiper"));
+categorySwiper1.numOfMoving = 4;
+categorySwiper1.numOfStaging = 4;
+categorySwiper1.setNextBtn(document.querySelector("#main-info .announcement-body .swiper-button-next"));
+categorySwiper1.setPrevBtn(document.querySelector("#main-info .announcement-body .swiper-button-prev"));

@@ -258,7 +258,6 @@
     width: calc(100% / 4 - 20px);
     height: 170px;
     flex-shrink: 0;
-    /* background: #ffc; */
 }
 #main-info .announcement .category-swiper-frame .category-swiper .swiper-item::before{
     position: absolute;
@@ -271,7 +270,6 @@
 }
 #main-info .announcement .category-swiper-frame .category-swiper .swiper-item .department{
     position: relative;
-    z-index: 1;
     padding: 15px 10px 0 10px;
     background: #fff;
     font-size: 14px;
