@@ -7,17 +7,27 @@ I) 변수 설명
     4. Swiper.itemWidth는 swiperBox의 자식인 <li>요소의 너비를 의미한다. 각 <li>들은 너비가 모두 동일해야 한다.
 
 II) Swiper 객체 초기화 관련
+    0. 요약) swiperBox: 반드시 설정해야 합니다. 
+            numOfStaiging & numOfMoving: item이 하나씩 나타나고 움직이는 경우가 아니라면 설정하세요.
+            prevBtn & nextBtn: 버튼이 존재하는 경우에만 설정하세요.
+    
     1. 객체 생성자를 사용해 swiperBox를 초기화할 수 있다. (선택사항)
     1-1. 생성자를 사용해 초기화하지 않는다면 반드시 setSwiperBox()를 사용해 swiperBox를 초기화해야 한다. 그래야 스와이퍼 관련 속성 변수와 resize 이벤트 리스너가 등록된다.
-    2. 객체 사용자는 반드시 swiperBox와 numOfStaging과 numOfMoving을 초기화해야 한다.(기본 설정값 0)
-    3. prev버튼과 next 버튼은 반드시 setPrecBtn() setNextBtn() 함수를 사용해서 초기화해야한다. 초기화시 자동으로 이벤트리스너가 등록된다.
+    2. numOfStaging과 numOfMoving을 초기화해야 한다.(기본 설정값 1) -> 미설정시 item이 하나씩 slide됨
+    2-1. 함수 setNumOfStaging()과 setNumOfMoving()을 사용해서 초기화해야 한다.
+    2-2. 두 함수 모두 한 개의 인자만 보내면 numOfStaging과  NumOfMoving을 초기화한다.
+        ex) setNumOfMoving(9) => numOfMoving = 9; (desktopMoving = null; mobMoving = null)
+    2-3. 두 개의 인자를 보내면 첫번째 인자는 데스크탑을 두번째 인자는 모바일 값을 설정한다.
+        ex) setNumOfMoving(9, 4) => desktopMoving = 9; mobMoving = 4;
+    3. prev버튼과 next 버튼은 반드시 setPrevBtn() setNextBtn() 함수를 사용해서 초기화해야한다. 초기화시 자동으로 이벤트리스너가 등록된다.
 */
 
 
 /* 추가해야 하는 기능
     1. 모바일 환경에서 numOfStaging과 numOfMoving이 변경되는 기능을 추가해야함.
-    2. 비동기식 코드 실행 때문인지 몰라도 swiper 이전/다음 버튼이 이상동작하는 현상을 수정해야함.
-    3. 스와이퍼 기능 (드래그 시 움직이는)
+    2. autoSlide 기능 추가
+    3. 비동기식 코드 실행 때문인지 몰라도 swiper 이전/다음 버튼이 이상동작하는 현상을 수정해야함.
+    4. 스와이퍼 기능 (드래그 시 움직이는)
 */
 class Swiper {
     // HTML 요소 객체 변수
@@ -31,8 +41,8 @@ class Swiper {
     mobMoving = null;
     mobStaging = null;
 
-    numOfStaging = 0;
-    numOfMoving = 0;
+    numOfStaging = 1;
+    numOfMoving = 1;
     currentIdx = 0;
     lastIdx = 0;
     itemNum = 0;
@@ -41,7 +51,7 @@ class Swiper {
 
     // 객체 함수 실행 관련 변수
     isLastSlide = false;
-    switchMedia = false;
+    setsMoblie = false;
 
     //생성자 
     constructor(){
@@ -81,9 +91,9 @@ class Swiper {
         } else {
             this.deskMoving = arguments[0];
             this.mobMoving = arguments[1];
-            this.switchMedia = true;
+            this.setsMoblie = true;
         }
-        this.resizeSwiper();
+        this.switchMedia(true);
     }
     
     setNumOfStaging(){
@@ -94,19 +104,25 @@ class Swiper {
         } else {
             this.deskStaging = arguments[0];
             this.mobStaging = arguments[1];
-            this.switchMedia = true;
+            this.setsMoblie = true;
         }
-        this.resizeSwiper();
+        this.switchMedia(true);
     }
 
     resizeSwiper(){
+        this.switchMedia();
+        this.setItemWidth();
+        this.placeSlide(this.currentIdx);
+    }
+
+    switchMedia(trigger){
         //모바일 설정이 되어 있는 경우에만 실행
-        // switchMedia 설정을 해야함.
-        if(this.mobMoving != null || this.mobStaging != null){ 
+        //trigger = true로 인자 전달시 조건문 무조건 실행
+        if(this.mobMoving != null && this.mobStaging != null){ 
             try{
-                if(!this.switchMedia && maxMoblieWidth > window.innerWidth){
+                if((!this.setsMoblie || trigger) && maxMoblieWidth > window.innerWidth){
                     this.setMobSwiper();
-                } else if(this.switchMedia && maxMoblieWidth <= window.innerWidth){
+                } else if((this.setsMoblie || trigger) && maxMoblieWidth <= window.innerWidth){
                     this.setDesktopSwiper();
                 }
             } catch(err) {
@@ -114,20 +130,18 @@ class Swiper {
                 console.log("maxMoblieWidth가 정의되어 있지 않습니다. maxMobileWidth를 전역변수로 설정하십시오.");
             }
         }
-        
-        this.setItemWidth();
-        this.placeSlide(this.currentIdx);
     }
-
     setMobSwiper(){
+        console.log("i am a Mobile");
         this.numOfMoving = this.mobMoving;
         this.numOfStaging = this.mobStaging;
-        this.switchMedia = false;
+        this.setsMoblie = true;
     }
     setDesktopSwiper(){
+        console.log("I am a PC");
         this.numOfMoving = this.deskMoving;
         this.numOfStaging = this.deskStaging;
-        this.switchMedia = false;
+        this.setsMoblie = false;
     }
 
     nextSlide(){
