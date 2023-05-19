@@ -24,7 +24,6 @@ II) Swiper 객체 초기화 관련
 
 
 /* 추가해야 하는 기능
-    1. 모바일 환경에서 numOfStaging과 numOfMoving이 변경되는 기능을 추가해야함.
     2. autoSlide 기능 추가
     3. 비동기식 코드 실행 때문인지 몰라도 swiper 이전/다음 버튼이 이상동작하는 현상을 수정해야함.
     4. 스와이퍼 기능 (드래그 시 움직이는)
@@ -40,6 +39,7 @@ class Swiper {
     deskStaging = null;
     mobMoving = null;
     mobStaging = null;
+    autoSlideTimer = null;
 
     numOfStaging = 1;
     numOfMoving = 1;
@@ -52,6 +52,7 @@ class Swiper {
     // 객체 함수 실행 관련 변수
     isLastSlide = false;
     setsMoblie = false;
+    isAuto = false;
 
     //생성자 
     constructor(){
@@ -95,7 +96,6 @@ class Swiper {
         }
         this.switchMedia(true);
     }
-    
     setNumOfStaging(){
         if(arguments.length == 1){
             this.numOfStaging = arguments[0];
@@ -108,13 +108,17 @@ class Swiper {
         }
         this.switchMedia(true);
     }
-
+    setAutoSlide(slideInterval){
+        this.autoSlideTimer = setInterval(() => { this.nextSlide() }, slideInterval);
+    }
+    stopAutoSlide(){
+        clearInterval(this.autoSlideTimer);
+    }
     resizeSwiper(){
         this.switchMedia();
         this.setItemWidth();
         this.placeSlide(this.currentIdx);
     }
-
     switchMedia(trigger){
         //모바일 설정이 되어 있는 경우에만 실행
         //trigger = true로 인자 전달시 조건문 무조건 실행
@@ -132,13 +136,13 @@ class Swiper {
         }
     }
     setMobSwiper(){
-        console.log("i am a Mobile");
+        // console.log("i am a Mobile");
         this.numOfMoving = this.mobMoving;
         this.numOfStaging = this.mobStaging;
         this.setsMoblie = true;
     }
     setDesktopSwiper(){
-        console.log("I am a PC");
+        // console.log("I am a PC");
         this.numOfMoving = this.deskMoving;
         this.numOfStaging = this.deskStaging;
         this.setsMoblie = false;
@@ -227,6 +231,7 @@ serviceSwiper.setNextBtn(document.querySelector(".main-service .swiper-button-ne
 serviceSwiper.setPrevBtn(document.querySelector(".main-service .swiper-button-prev"));
 serviceSwiper.setNumOfMoving(9, 4);
 serviceSwiper.setNumOfStaging(9, 4);
+serviceSwiper.setAutoSlide(3000);
 
 const categorySwiper1 = new Swiper(document.querySelector("#main-info .announcement .category-swiper01 .category-swiper"));
 categorySwiper1.numOfMoving = 4;
