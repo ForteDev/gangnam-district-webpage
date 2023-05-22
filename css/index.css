@@ -311,7 +311,64 @@
     width: 265px;
     height: 100%;
     flex-shrink: 0;
+    overflow: hidden;
 }
+#main-info .info-board-top .with-citizen .with-citizen-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+#main-info .info-board-top .with-citizen .with-citizen-title{ 
+    color: #00347d; 
+    font-size: 20px;
+}
+#main-info .info-board-top .with-citizen .with-citizen-title span{ color: var(--main-color);}
+#main-info .info-board-top .with-citizen .with-citizen-title a{ color: #62717e;}
+#main-info .info-board-top .with-citizen .swiper-button-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#main-info .info-board-top .with-citizen .swiper-button{ 
+    width: 25px;
+    transition: background-color 0.5s;
+}
+#main-info .info-board-top .with-citizen .swiper-button i{
+    color: #62717e;
+    font-weight: 700;
+}
+#main-info .info-board-top .with-citizen .swiper-button:hover{
+    background: #f1f7fa;
+}
+#main-info .info-board-top .with-citizen .swiper{
+    position: relative;
+    left: 0;
+    display: flex;
+}
+#main-info .info-board-top .with-citizen .swiper.slidable{
+    transition: left 0.6s 80ms;
+}
+#main-info .info-board-top .with-citizen .swiper .swiper-item{
+    flex-shrink: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#main-info .info-board-top .with-citizen .swiper .swiper-item .swiper-item-title{
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+#main-info .info-board-top .with-citizen .swiper .swiper-item .swiper-item-date{
+    margin-top: 10px;
+    font-size: 14px;
+    color: #969696;
+}
+
 @media (max-width: 1080px){
     #index-banner .container{
         display: block;
