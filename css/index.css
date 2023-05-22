@@ -338,9 +338,9 @@
     color: #62717e;
     font-weight: 700;
 }
-#main-info .info-board-top .with-citizen .swiper-button:hover{
-    background: #f1f7fa;
-}
+#main-info .info-board-top .with-citizen .swiper-button-play.playing .xi-play{ display: none; }
+#main-info .info-board-top .with-citizen .swiper-button-play.paused .xi-pause{ display: none; }
+#main-info .info-board-top .with-citizen .swiper-button:hover{ background: #f1f7fa; }
 #main-info .info-board-top .with-citizen .swiper{
     position: relative;
     left: 0;

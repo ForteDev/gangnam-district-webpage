@@ -25,6 +25,8 @@ II) Swiper 객체 초기화 관련
 
 /* 추가해야 하는 기능
     2. autoSlide 기능 추가
+    2-1. 재생/멈춤 버튼 설정
+    2-2. 마우스 호버시 slide 멈춤 / 마우스를 떼면 다시 autoPlay
     3. 비동기식 코드 실행 때문인지 몰라도 swiper 이전/다음 버튼이 이상동작하는 현상을 수정해야함.
     4. 스와이퍼 기능 (드래그 시 움직이는)
 */
@@ -32,6 +34,7 @@ class Swiper {
     // HTML 요소 객체 변수
     prevBtn = null;
     nextBtn = null;
+    playBtn = null;
     swiperBox = null;
     
     // swiper 설정 관련 변수
@@ -48,12 +51,13 @@ class Swiper {
     itemNum = 0;
     itemWidth = 0;
     slideDuraition = 680;
+    slideInterval = 3000;
 
     // 객체 함수 실행 관련 변수
     isLastSlide = false;
     setsMoblie = false;
     isAuto = false;
-
+    setsHoverEvent = false;
     //생성자 
     constructor(){
         if(arguments.length == 1){
@@ -68,7 +72,10 @@ class Swiper {
     setNextBtn(nextBtn){
         this.nextBtn = nextBtn;
         this.nextBtn.addEventListener("click", this.handleNextBtn);
-
+    }
+    setPlayBtn(playBtn){
+        this.playBtn = playBtn;
+        this.playBtn.addEventListener("click", this.handlePlayBtn);
     }
     setSwiperBox(swiperBox){
         this.swiperBox = swiperBox;
@@ -109,11 +116,18 @@ class Swiper {
         this.switchMedia(true);
     }
     setAutoSlide(slideInterval){
-        this.autoSlideTimer = setInterval(() => { this.nextSlide() }, slideInterval);
+        if(arguments.length == 1){
+            this.slideInterval = slideInterval;
+        }
+        this.autoSlideTimer = setInterval(() => { this.nextSlide() }, this.slideInterval);
+        this.isAuto = true;
     }
     stopAutoSlide(){
         clearInterval(this.autoSlideTimer);
+        this.isAuto = false;
     }
+
+
     resizeSwiper(){
         this.switchMedia();
         this.setItemWidth();
@@ -147,7 +161,17 @@ class Swiper {
         this.numOfStaging = this.deskStaging;
         this.setsMoblie = false;
     }
-
+    togglePlay(){
+        if(this.isAuto){
+            this.playBtn.classList.remove("playing");
+            this.playBtn.classList.add("paused");
+            this.stopAutoSlide();
+        } else {
+            this.playBtn.classList.remove("paused");
+            this.playBtn.classList.add("playing");
+            this.setAutoSlide();
+        }
+    }
     nextSlide(){
         let targetIdx = this.currentIdx + this.numOfMoving;
         if(this.isLastSlide){
@@ -224,6 +248,8 @@ class Swiper {
     handleNextBtn = () => { this.nextSlide(); }
     handlePrevBtn = () => { this.prevSlide(); }
     handleResize = () => { this.resizeSwiper(); }
+    handlePlayBtn = () => { this.togglePlay(); }
+    handleHover = () => { }
 }
 
 const serviceSwiper = new Swiper(document.getElementById("main-service-swiper"));
@@ -231,10 +257,17 @@ serviceSwiper.setNextBtn(document.querySelector(".main-service .swiper-button-ne
 serviceSwiper.setPrevBtn(document.querySelector(".main-service .swiper-button-prev"));
 serviceSwiper.setNumOfMoving(9, 4);
 serviceSwiper.setNumOfStaging(9, 4);
-serviceSwiper.setAutoSlide(3000);
 
 const categorySwiper1 = new Swiper(document.querySelector("#main-info .announcement .category-swiper01 .category-swiper"));
 categorySwiper1.numOfMoving = 4;
 categorySwiper1.numOfStaging = 4;
 categorySwiper1.setNextBtn(document.querySelector("#main-info .announcement-body .swiper-button-next"));
 categorySwiper1.setPrevBtn(document.querySelector("#main-info .announcement-body .swiper-button-prev"));
+categorySwiper1.setAutoSlide(5000);
+
+const citizenSwiper = new Swiper(document.querySelector("#main-info .info-board-top .with-citizen .swiper"));
+citizenSwiper.setNextBtn(document.querySelector("#main-info .info-board-top .with-citizen .swiper-button-next"));
+citizenSwiper.setPrevBtn(document.querySelector("#main-info .info-board-top .with-citizen .swiper-button-prev"));
+citizenSwiper.setPlayBtn(document.querySelector("#main-info .info-board-top .with-citizen .swiper-button-play"));
+
+citizenSwiper.setAutoSlide(3000);
