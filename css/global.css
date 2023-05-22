@@ -1,6 +1,7 @@
 
 /* HEADER */
 #header .header-top .container {
+    z-index: 99;
     display: flex;
 }
 .header-bottom .container .mobile-header {

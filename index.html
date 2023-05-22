@@ -1144,7 +1144,7 @@
                 </div>
             </div>
         </div>
-        <div class="info-board">
+        <div class="info-board desktop-only">
             <div class="info-board-top">
                 <div class="container">
                     <article class="announcement">
@@ -1152,24 +1152,24 @@
                             <div class="announcement-head">
                                 <ul class="category-list">
                                     <li class="category-item">
-                                        <h3 class="category-item-button">공지사항</h3>
+                                        <h3 class="category-item-button active" aria-roledescription="버튼">공지사항</h3>
                                     </li>
                                     <li class="category-item">
-                                        <h3 class="category-item-button">고시공고</h3>
+                                        <h3 class="category-item-button" aria-roledescription="버튼">고시공고</h3>
                                     </li>
                                     <li class="category-item">
-                                        <h3 class="category-item-button">채용정보</h3>
+                                        <h3 class="category-item-button" aria-roledescription="버튼">채용정보</h3>
                                     </li>
                                     <li class="category-item">
-                                        <h3 class="category-item-button">보도자료</h3>
+                                        <h3 class="category-item-button" aria-roledescription="버튼">보도자료</h3>
                                     </li>
                                     <li class="category-item">
-                                        <h3 class="category-item-button">구정보도</h3>
+                                        <h3 class="category-item-button" aria-roledescription="버튼">구정보도</h3>
                                     </li>
                                 </ul>
-                                <div class="swiper-gauge">
-                                    더볼게요
-                                </div>
+                                <a class="swiper-gauge">
+                                    <span class="swiper-gauge-text">더 볼게요</span> <span class="plus-circle"><i class="xi-plus"></i></span>
+                                </a>
                             </div>
                             <div class="announcement-body">
                                 <div class="swiper-button-box desktop-only">
@@ -1179,6 +1179,13 @@
                                 <ul class="category-swiper-list category-swiper-frame">
                                     <li class="category-swiper-item category-swiper01">
                                         <ul class="category-swiper">
+                                            <li class="swiper-item">
+                                                <p class="department">세곡보건지소</p>
+                                                <a href="#" class="swiper-item-link">
+                                                    세곡보건지소 6월 특별 강좌 참여하세요
+                                                </a>
+                                                <span class="swiper-item-date">2023-05-19</span>
+                                            </li>
                                             <li class="swiper-item">
                                                 <p class="department">의약과</p>
                                                 <a href="#" class="swiper-item-link">
@@ -1208,32 +1215,25 @@
                                                 <span class="swiper-item-date">2023-05-15</span>
                                             </li>
                                             <li class="swiper-item">
-                                                <p class="department">질병관리과</p>
+                                                <p class="department">환경과</p>
                                                 <a href="#" class="swiper-item-link">
-                                                    코로나-19 격리 대상자 시험목적의 외출허용 공지
+                                                    더해진 안전, 더커진 행복 여름철 가스안전사용
                                                 </a>
-                                                <span class="swiper-item-date">2023-05-15</span>
+                                                <span class="swiper-item-date">2023-05-12</span>
+                                            </li>
+                                            <li class="swiper-item">
+                                                <p class="department">교육지원과</p>
+                                                <a href="#" class="swiper-item-link">
+                                                    강남구 청소년 디지털 융합 미술체험 프로그램 안내
+                                                </a>
+                                                <span class="swiper-item-date">2023-05-11</span>
                                             </li>
                                             <li class="swiper-item">
                                                 <p class="department">질병관리과</p>
                                                 <a href="#" class="swiper-item-link">
-                                                    코로나-19 격리 대상자 시험목적의 외출허용 공지
+                                                    2023년 상반기 코로나19 면역저하자 등 고위험군 추가접종 실시 안내(접종백신 변경)
                                                 </a>
-                                                <span class="swiper-item-date">2023-05-15</span>
-                                            </li>
-                                            <li class="swiper-item">
-                                                <p class="department">질병관리과</p>
-                                                <a href="#" class="swiper-item-link">
-                                                    코로나-19 격리 대상자 시험목적의 외출허용 공지
-                                                </a>
-                                                <span class="swiper-item-date">2023-05-15</span>
-                                            </li>
-                                            <li class="swiper-item">
-                                                <p class="department">질병관리과</p>
-                                                <a href="#" class="swiper-item-link">
-                                                    코로나-19 격리 대상자 시험목적의 외출허용 공지
-                                                </a>
-                                                <span class="swiper-item-date">2023-05-15</span>
+                                                <span class="swiper-item-date">2023-05-11</span>
                                             </li>
                                         </ul>
                                     </li>
@@ -1246,21 +1246,59 @@
                         </div>
                     </article>
                     <article class="with-citizen">
-                        <h3 class="with-citizen-title">구민과 <span>함께</span> <a href="#none" target="_blank" title="구민과 함께 더보기(새창열기)"><i class="xi-plus-circle"></i></a></h3>
-                        <div class="swiper-button-box">
-                            <button class="swiper-button swiper-button-next"><i class="xi-angle-left"></i></button>
-                            <button class="swiper-button swiper-button-prev"><i class="xi-angle-right"></i></button>
-                            <button class="swiper-button swiper-button-play"><i class="xi-play"></i></button>
+                        <div class="with-citizen-top">
+                            <h3 class="with-citizen-title">구민과 <span>함께</span> <a href="#none" target="_blank" title="구민과 함께 더보기(새창열기)"><i class="xi-plus-circle"></i></a></h3>
+                            <div class="swiper-button-box">
+                                <button class="swiper-button swiper-button-prev"><i class="xi-angle-left"></i></button>
+                                <button class="swiper-button swiper-button-next"><i class="xi-angle-right"></i></button>
+                                <button class="swiper-button swiper-button-play playing"><i class="xi-play"></i><i class="xi-pause"></i></button>
+                            </div>
                         </div>
-                        <div class="frame">
-                            <ul class="swiper">
+                        <div class="with-citizen-bottom">
+                            <ul class="swiper slidable">
                                 <li class="swiper-item">
-                                    <a href="" class="swiper-item-link">
+                                    <a href="#none" class="swiper-item-link">
                                         <div class="swiper-item-image">
-                                            <img src="./images/‘누워서 보는 콘서트’ 관람.jpg" alt="">
+                                            <img src="./images/‘누워서 보는 콘서트’ 관람.jpg" alt="‘누워서 보는 콘서트’ 관람">
                                         </div>
-                                        <div class="swiper-item-title">‘누워서 보는 콘서트’ 관람</div>
-                                        <div class="swiper-item-date">2023-04-30</div>
+                                        <div class="swiper-item-title">장애 복지 - ‘누워서 보는 콘서트’ 관람</div>
+                                        <div class="swiper-item-date">2023-05-22</div>
+                                    </a>
+                                </li>
+                                <li class="swiper-item">
+                                    <a href="#none" class="swiper-item-link">
+                                        <div class="swiper-item-image">
+                                            <img src="./images/‘장애인의 날’ 축하.jpg" alt="‘장애인의 날’ 축하">
+                                        </div>
+                                        <div class="swiper-item-title">‘장애인의 날’ 축하</div>
+                                        <div class="swiper-item-date">2023-05-19</div>
+                                    </a>
+                                </li>
+                                <li class="swiper-item">
+                                    <a href="#none" class="swiper-item-link">
+                                        <div class="swiper-item-image">
+                                            <img src="./images/‘강남구 새마을방역봉사대 발대식’.jpg" alt="‘강남구 새마을방역봉사대 발대식’">
+                                        </div>
+                                        <div class="swiper-item-title">‘강남구 새마을방역봉사대 발대식’</div>
+                                        <div class="swiper-item-date">2023-05-16</div>
+                                    </a>
+                                </li>
+                                <li class="swiper-item">
+                                    <a href="#none" class="swiper-item-link">
+                                        <div class="swiper-item-image">
+                                            <img src="./images/‘강남_ 디지털을 품다’.jpg" alt="‘강남_ 디지털을 품다’">
+                                        </div>
+                                        <div class="swiper-item-title">‘강남_ 디지털을 품다’</div>
+                                        <div class="swiper-item-date">2023-05-10</div>
+                                    </a>
+                                </li>
+                                <li class="swiper-item">
+                                    <a href="#none" class="swiper-item-link">
+                                        <div class="swiper-item-image">
+                                            <img src="./images/‘집값 작전세력 근절 대책 회의’ 참석.jpg" alt="‘집값 작전세력 근절 대책 회의’ 참석">
+                                        </div>
+                                        <div class="swiper-item-title">‘집값 작전세력 근절 대책 회의’ 참석</div>
+                                        <div class="swiper-item-date">2023-05-07</div>
                                     </a>
                                 </li>
                             </ul>

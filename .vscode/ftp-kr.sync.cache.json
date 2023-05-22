@@ -1,17 +1,18 @@
 {
   "ftp://jasonpark.dothome.co.kr:21@jasonpark": {
     "html": {
+      ".vscode": {},
       "css": {
         "global.css": {
           "type": "-",
-          "size": 23704,
-          "lmtime": 1683767300350,
+          "size": 23722,
+          "lmtime": 1684459234522,
           "modified": false
         },
         "index.css": {
           "type": "-",
-          "size": 10826,
-          "lmtime": 1684311362739,
+          "size": 10780,
+          "lmtime": 1684391034215,
           "modified": false
         },
         "layout.css": {
@@ -34,21 +35,21 @@
         },
         "reset.css": {
           "type": "-",
-          "size": 1417,
+          "size": 1377,
           "lmtime": 1683689568077,
-          "modified": false
+          "modified": true
         },
         "sandbox_style.css": {
           "type": "-",
-          "size": 964,
+          "size": 903,
           "lmtime": 1682322772907,
-          "modified": false
+          "modified": true
         },
         "style.css": {
           "type": "-",
-          "size": 1345,
+          "size": 1317,
           "lmtime": 1682907033243,
-          "modified": false
+          "modified": true
         }
       },
       "favicon.png": {
@@ -330,9 +331,9 @@
         },
         "pageInfo.txt": {
           "type": "-",
-          "size": 52,
+          "size": 48,
           "lmtime": 1682302461806,
-          "modified": false
+          "modified": true
         },
         "service_ico01.png": {
           "type": "-",
@@ -396,9 +397,9 @@
         },
         "service_ico11.png": {
           "type": "-",
-          "size": 2127,
+          "size": 2112,
           "lmtime": 1682302465320,
-          "modified": false
+          "modified": true
         },
         "service_ico12.png": {
           "type": "-",
@@ -426,9 +427,9 @@
         },
         "service_ico16.png": {
           "type": "-",
-          "size": 2119,
+          "size": 2296,
           "lmtime": 1682302463228,
-          "modified": false
+          "modified": true
         },
         "service_ico17.png": {
           "type": "-",
@@ -464,30 +465,6 @@
           "type": "-",
           "size": 2478,
           "lmtime": 1682302463970,
-          "modified": false
-        },
-        "service_ico23.png": {
-          "type": "-",
-          "size": 2527,
-          "lmtime": 1682302463939,
-          "modified": false
-        },
-        "service_ico24.png": {
-          "type": "-",
-          "size": 2478,
-          "lmtime": 1682302463970,
-          "modified": false
-        },
-        "service_ico25.png": {
-          "type": "-",
-          "size": 2442,
-          "lmtime": 1682302465406,
-          "modified": false
-        },
-        "service_ico9.png": {
-          "type": "-",
-          "size": 2413,
-          "lmtime": 1682302465096,
           "modified": false
         },
         "sns_bl.png": {
@@ -871,8 +848,8 @@
       },
       "index.html": {
         "type": "-",
-        "size": 109040,
-        "lmtime": 1684310431980,
+        "size": 109086,
+        "lmtime": 1684459044749,
         "modified": false
       },
       "index1.html": {
@@ -884,20 +861,14 @@
       "js": {
         "global.js": {
           "type": "-",
-          "size": 8075,
+          "size": 7882,
           "lmtime": 1683773698226,
-          "modified": false
+          "modified": true
         },
         "index.js": {
           "type": "-",
-          "size": 5880,
-          "lmtime": 1684312329995,
-          "modified": false
-        },
-        "s.js": {
-          "type": "-",
-          "size": 7379,
-          "lmtime": 1683613532176,
+          "size": 10297,
+          "lmtime": 1684467089717,
           "modified": false
         }
       },
@@ -905,24 +876,6 @@
         "type": "-",
         "size": 2639,
         "lmtime": 1683514831460,
-        "modified": false
-      },
-      "교육.png": {
-        "type": "-",
-        "size": 16320,
-        "lmtime": 0,
-        "modified": false
-      },
-      "동주민센터.png": {
-        "type": "-",
-        "size": 24392,
-        "lmtime": 0,
-        "modified": false
-      },
-      "문화.png": {
-        "type": "-",
-        "size": 14384,
-        "lmtime": 0,
         "modified": false
       },
       "새 폴더": {
@@ -962,18 +915,6 @@
           "lmtime": 0,
           "modified": false
         }
-      },
-      "생활복지.png": {
-        "type": "-",
-        "size": 51069,
-        "lmtime": 0,
-        "modified": false
-      },
-      "의회.png": {
-        "type": "-",
-        "size": 7643,
-        "lmtime": 0,
-        "modified": false
       }
     }
   },
