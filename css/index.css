@@ -255,7 +255,7 @@
     color: #fff;
 }
 #main-info .info-board-top .announcement .canvus .announcement-body{ padding-top: 20px; }
-@media (max-width: 1280px){
+@media (max-width: 1280px) and (min-width:1081px) {
     #main-info .info-board-top .announcement { max-width: calc(100vw - 325px);}
 }
 #main-info .info-board-top .announcement .canvus .announcement-body .swiper-button{

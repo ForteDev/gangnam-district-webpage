@@ -25,9 +25,9 @@ II) Swiper 객체 초기화 관련
 
 /* 추가해야 하는 기능
     2. autoSlide 기능 추가
-    2-1. 재생/멈춤 버튼 설정
-    2-2. 마우스 호버시 slide 멈춤 / 마우스를 떼면 다시 autoPlay
+    2-1. 마우스 호버시 slide 멈춤 / 마우스를 떼면 다시 autoPlay
     3. 비동기식 코드 실행 때문인지 몰라도 swiper 이전/다음 버튼이 이상동작하는 현상을 수정해야함.
+    3-1. 콜백 함수에 대한 이해를 바탕으로 nextSlide()와 prevSlide() 함수 코드 재작성 필요.
     4. 스와이퍼 기능 (드래그 시 움직이는)
 */
 class Swiper {
@@ -58,6 +58,7 @@ class Swiper {
     setsMoblie = false;
     isAuto = false;
     setsHoverEvent = false;
+
     //생성자 
     constructor(){
         if(arguments.length == 1){
@@ -65,6 +66,7 @@ class Swiper {
         }
     }
 
+    // 변수 설정 관련 함수
     setPrevBtn(prevBtn){
         this.prevBtn = prevBtn;
         this.prevBtn.addEventListener("click", this.handlePrevBtn);
@@ -115,6 +117,8 @@ class Swiper {
         }
         this.switchMedia(true);
     }
+
+    // 기능 구현 관련 함수
     setAutoSlide(slideInterval){
         if(arguments.length == 1){
             this.slideInterval = slideInterval;
@@ -126,8 +130,6 @@ class Swiper {
         clearInterval(this.autoSlideTimer);
         this.isAuto = false;
     }
-
-
     resizeSwiper(){
         this.switchMedia();
         this.setItemWidth();
@@ -259,8 +261,8 @@ serviceSwiper.setNumOfMoving(9, 4);
 serviceSwiper.setNumOfStaging(9, 4);
 
 const categorySwiper1 = new Swiper(document.querySelector("#main-info .announcement .category-swiper01 .category-swiper"));
-categorySwiper1.numOfMoving = 4;
-categorySwiper1.numOfStaging = 4;
+categorySwiper1.setNumOfMoving(4);
+categorySwiper1.setNumOfStaging(4);
 categorySwiper1.setNextBtn(document.querySelector("#main-info .announcement-body .swiper-button-next"));
 categorySwiper1.setPrevBtn(document.querySelector("#main-info .announcement-body .swiper-button-prev"));
 categorySwiper1.setAutoSlide(5000);
@@ -269,5 +271,4 @@ const citizenSwiper = new Swiper(document.querySelector("#main-info .info-board-
 citizenSwiper.setNextBtn(document.querySelector("#main-info .info-board-top .with-citizen .swiper-button-next"));
 citizenSwiper.setPrevBtn(document.querySelector("#main-info .info-board-top .with-citizen .swiper-button-prev"));
 citizenSwiper.setPlayBtn(document.querySelector("#main-info .info-board-top .with-citizen .swiper-button-play"));
-
 citizenSwiper.setAutoSlide(3000);
