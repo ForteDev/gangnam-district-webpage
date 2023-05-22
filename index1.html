@@ -7,128 +7,178 @@
     <title>강남구청</title>
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/m_style.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/m_style.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/reset.css">
+
 </head>
 <body>
-    <header id="pc-header">
-        <div class="header-top wrap">
-            <ul class="family-sites">
-                <li><a href="#none"><strong>대표 홈페이지</strong></a></li>
-                <li><a href="#none">보건소</a></li>
-                <li>
-                    <a href="#none">생활·복지</a>
-                    <ul class="lnb target">
-                        <li><a href="#none">강남복지재단</a></li>
-                        <li><a href="#none">역삼재가노인데이케어센터</a></li>
-                        <li><a href="#none">역삼노인복지센터</a></li>
-                        <li><a href="#none">강남노인종합복지관</a></li>
-                        <li><a href="#none">강남구청소년상담복지센터</a></li>
-                        <li><a href="#none">강남시니어플라자</a></li>
-                        <li><a href="#none">강남구정신건강복지센터</a></li>
-                        <li><a href="#none">강남구수어통역센터</a></li>
-                        <li><a href="#none">청소년심리지원센터사이쉼</a></li>
-                        <li><a href="#none">대치노인복지센터</a></li>
-                        <li><a href="#none">강남지역자활센터</a></li>
-                        <li><a href="#none">압구정노인복지센터</a></li>
-                        <li><a href="#none">논현노인종합복지관</a></li>
-                        <li><a href="#none">강남장애인복지관</a></li>
-                        <li><a href="#none">강남구가족센터</a></li>
-                        <li><a href="#none">강남세움복지관</a></li>
-                        <li><a href="#none">강남발달장애인평생교육센터</a></li>
-                        <li><a href="#none">강남구웰에이징센터</a></li>
-
-                        
-                    </ul>
-                </li>
-                <li>
-                    <a href="#none">교육·경제</a>
-                    <ul class="lnb">
-                        <li><a href="#none">평생학습</a></li>
-                        <li><a href="#none">강남인강</a></li>
-                        <li><a href="#none">강남구여성능력개발센터</a></li>
-                        <li><a href="#none">일원청소년독서실</a></li>
-                        <li><a href="#none">역삼청소년수련관</a></li>
-                        <li><a href="#none">강남취창업허브센터</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#none">문화·관광</a>
-                    <ul class="lnb">
-                        <li><a href="#none">VISIT GANGNAM</a></li>
-                        <li><a href="#none">MEDICAL GANGNAM</a></li>
-                        <li><a href="#none">강남문화재단</a></li>
-                        <li><a href="#none">강남구 통합예약사이트</a></li>
-                        <li><a href="#none">강남구립도서관</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#none">강남구의회</a>
-                    <ul class="lnb">
-                        <li><a href="#none">강남구의회</a></li>
-                        <li><a href="#none">강남구의회 회의록검색시스템</a></li>
-                        <li><a href="#none">강남구 청소년의회</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#none">동주민센터</a>
-                    <ul class="lnb">
-                        <li><a href="#none">개포1동</a></li>
-                        <li><a href="#none">개포2동</a></li>
-                        <li><a href="#none">개포3동</a></li>
-                        <li><a href="#none">개포4동</a></li>
-                        <li><a href="#none">논현1동</a></li>
-                        <li><a href="#none">논현2동</a></li>
-                        <li><a href="#none">대치1동</a></li>
-                        <li><a href="#none">대치2동</a></li>
-                        <li><a href="#none">대치4동</a></li>
-                        <li><a href="#none">도곡1동</a></li>
-                        <li><a href="#none">도곡2동</a></li>
-                        <li><a href="#none">삼성1동</a></li>
-                        <li><a href="#none">삼성2동</a></li>
-                        <li><a href="#none">세곡동</a></li>
-                        <li><a href="#none">수서동</a></li>
-                        <li><a href="#none">신사동</a></li>
-                        <li><a href="#none">압구정동</a></li>
-                        <li><a href="#none">역삼1동</a></li>
-                        <li><a href="#none">역삼2동</a></li>
-                        <li><a href="#none">일원본동</a></li>
-                        <li><a href="#none">일원1동</a></li>
-                        <li><a href="#none">청담동</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="right-menu">
-                <div class="frame" id="weather">
-                    <ul class="slider" >
-                        <li><img src="" alt="날씨아이콘"><span class="state"></span><span class="temperatures"></span></li>
-                        <li id="PM10">미세먼지 <span class="quality good">좋음</span></li>
-                        <li id="PM25">초미세먼지 <span class="quality Unhealthy">나쁨</span></li>
-                    </ul>
+    <section id="main-info">
+        <div class="info-board desktop-only">
+            <div class="info-board-top">
+                <div class="container">
+                    <article class="announcement">
+                        <div class="canvus">
+                            <div class="announcement-head">
+                                <ul class="category-list">
+                                    <li class="category-item">
+                                        <h3 class="category-item-button active" aria-roledescription="버튼">공지사항</h3>
+                                    </li>
+                                    <li class="category-item">
+                                        <h3 class="category-item-button" aria-roledescription="버튼">고시공고</h3>
+                                    </li>
+                                    <li class="category-item">
+                                        <h3 class="category-item-button" aria-roledescription="버튼">채용정보</h3>
+                                    </li>
+                                    <li class="category-item">
+                                        <h3 class="category-item-button" aria-roledescription="버튼">보도자료</h3>
+                                    </li>
+                                    <li class="category-item">
+                                        <h3 class="category-item-button" aria-roledescription="버튼">구정보도</h3>
+                                    </li>
+                                </ul>
+                                <a class="swiper-gauge">
+                                    <span class="swiper-gauge-text">더 볼게요</span> <span class="plus-circle"><i class="xi-plus"></i></span>
+                                </a>
+                            </div>
+                            <div class="announcement-body">
+                                <div class="swiper-button-box desktop-only">
+                                    <button class="swiper-button swiper-button-next"><i class="xi-angle-right"></i></button>
+                                    <button class="swiper-button swiper-button-prev"><i class="xi-angle-left"></i></button>
+                                </div>
+                                <ul class="category-swiper-list category-swiper-frame">
+                                    <li class="category-swiper-item category-swiper01">
+                                        <ul class="category-swiper">
+                                            <li class="swiper-item">
+                                                <p class="department">세곡보건지소</p>
+                                                <a href="#" class="swiper-item-link">
+                                                    세곡보건지소 6월 특별 강좌 참여하세요
+                                                </a>
+                                                <span class="swiper-item-date">2023-05-19</span>
+                                            </li>
+                                            <li class="swiper-item">
+                                                <p class="department">의약과</p>
+                                                <a href="#" class="swiper-item-link">
+                                                    2023년도 관내 의료기관 아동·장애인·긴급복지지원·노인학대 신고의무자교육 결과 제출 요청
+                                                </a>
+                                                <span class="swiper-item-date">2023-05-17</span>
+                                            </li>
+                                            <li class="swiper-item">
+                                                <p class="department">교통행정과</p>
+                                                <a href="#" class="swiper-item-link">
+                                                    2023년 6월 자전거 교실 운영 안내
+                                                </a>
+                                                <span class="swiper-item-date">2023-05-17</span>
+                                            </li>
+                                            <li class="swiper-item">
+                                                <p class="department">보건행정과</p>
+                                                <a href="#" class="swiper-item-link">
+                                                    건강한 강남 밥상 챌린지 프로그램 신청
+                                                </a>
+                                                <span class="swiper-item-date">2023-05-16</span>
+                                            </li>
+                                            <li class="swiper-item">
+                                                <p class="department">질병관리과</p>
+                                                <a href="#" class="swiper-item-link">
+                                                    코로나-19 격리 대상자 시험목적의 외출허용 공지
+                                                </a>
+                                                <span class="swiper-item-date">2023-05-15</span>
+                                            </li>
+                                            <li class="swiper-item">
+                                                <p class="department">환경과</p>
+                                                <a href="#" class="swiper-item-link">
+                                                    더해진 안전, 더커진 행복 여름철 가스안전사용
+                                                </a>
+                                                <span class="swiper-item-date">2023-05-12</span>
+                                            </li>
+                                            <li class="swiper-item">
+                                                <p class="department">교육지원과</p>
+                                                <a href="#" class="swiper-item-link">
+                                                    강남구 청소년 디지털 융합 미술체험 프로그램 안내
+                                                </a>
+                                                <span class="swiper-item-date">2023-05-11</span>
+                                            </li>
+                                            <li class="swiper-item">
+                                                <p class="department">질병관리과</p>
+                                                <a href="#" class="swiper-item-link">
+                                                    2023년 상반기 코로나19 면역저하자 등 고위험군 추가접종 실시 안내(접종백신 변경)
+                                                </a>
+                                                <span class="swiper-item-date">2023-05-11</span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="category-swiper-item category-swiper02"></li>
+                                    <li class="category-swiper-item category-swiper03"></li>
+                                    <li class="category-swiper-item category-swiper04"></li>
+                                    <li class="category-swiper-item category-swiper05"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="with-citizen">
+                        <div class="with-citizen-top">
+                            <h3 class="with-citizen-title">구민과 <span>함께</span> <a href="#none" target="_blank" title="구민과 함께 더보기(새창열기)"><i class="xi-plus-circle"></i></a></h3>
+                            <div class="swiper-button-box">
+                                <button class="swiper-button swiper-button-prev"><i class="xi-angle-left"></i></button>
+                                <button class="swiper-button swiper-button-next"><i class="xi-angle-right"></i></button>
+                                <button class="swiper-button swiper-button-play playing"><i class="xi-play"></i><i class="xi-pause"></i></button>
+                            </div>
+                        </div>
+                        <div class="with-citizen-bottom">
+                            <ul class="swiper slidable">
+                                <li class="swiper-item">
+                                    <a href="#none" class="swiper-item-link">
+                                        <div class="swiper-item-image">
+                                            <img src="./images/‘누워서 보는 콘서트’ 관람.jpg" alt="‘누워서 보는 콘서트’ 관람">
+                                        </div>
+                                        <div class="swiper-item-title">장애 복지 - ‘누워서 보는 콘서트’ 관람</div>
+                                        <div class="swiper-item-date">2023-05-22</div>
+                                    </a>
+                                </li>
+                                <li class="swiper-item">
+                                    <a href="#none" class="swiper-item-link">
+                                        <div class="swiper-item-image">
+                                            <img src="./images/‘장애인의 날’ 축하.jpg" alt="‘장애인의 날’ 축하">
+                                        </div>
+                                        <div class="swiper-item-title">‘장애인의 날’ 축하</div>
+                                        <div class="swiper-item-date">2023-05-19</div>
+                                    </a>
+                                </li>
+                                <li class="swiper-item">
+                                    <a href="#none" class="swiper-item-link">
+                                        <div class="swiper-item-image">
+                                            <img src="./images/‘강남구 새마을방역봉사대 발대식’.jpg" alt="‘강남구 새마을방역봉사대 발대식’">
+                                        </div>
+                                        <div class="swiper-item-title">‘강남구 새마을방역봉사대 발대식’</div>
+                                        <div class="swiper-item-date">2023-05-16</div>
+                                    </a>
+                                </li>
+                                <li class="swiper-item">
+                                    <a href="#none" class="swiper-item-link">
+                                        <div class="swiper-item-image">
+                                            <img src="./images/‘강남_ 디지털을 품다’.jpg" alt="‘강남_ 디지털을 품다’">
+                                        </div>
+                                        <div class="swiper-item-title">‘강남_ 디지털을 품다’</div>
+                                        <div class="swiper-item-date">2023-05-10</div>
+                                    </a>
+                                </li>
+                                <li class="swiper-item">
+                                    <a href="#none" class="swiper-item-link">
+                                        <div class="swiper-item-image">
+                                            <img src="./images/‘집값 작전세력 근절 대책 회의’ 참석.jpg" alt="‘집값 작전세력 근절 대책 회의’ 참석">
+                                        </div>
+                                        <div class="swiper-item-title">‘집값 작전세력 근절 대책 회의’ 참석</div>
+                                        <div class="swiper-item-date">2023-05-07</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
                 </div>
-                <a href="#none">로그인</a>
-                <button id="lang">
-                    <span>LANGUAGE <i class="xi-caret-down-min"></i></span>
-                    <ul class="hidden">
-                        <li><a href="#none">ENGLISH</a></li>
-                    </ul>
-                </button>
-                <a href="#none">사이트맵</a>
             </div>
+            <div class="info-board-bottom"></div>
         </div>
-        <div class="header-bot">
-            <div class="wrap">
-                <ul class="gnb">
-                    
-                </ul>
-                <h1><a href="#"><img src="/images/강남구청 로고.png" alt="강남구청 로고"></a></h1>
-                <div class="search">
-                    <input type="text" name="" id="">
-                    <button><img src="/images/btn-sch.png" alt="검색버튼"></button>
-                </div>
-
-            </div>
-        </div>
-    </header>
+    </section>    
 </body>
 </html>
