@@ -24,8 +24,6 @@ II) Swiper 객체 초기화 관련
 
 
 /* 추가해야 하는 기능
-    2. autoSlide 기능 추가
-    2-1. 마우스 호버시 slide 멈춤 / 마우스를 떼면 다시 autoPlay
     3. 비동기식 코드 실행 때문인지 몰라도 swiper 이전/다음 버튼이 이상동작하는 현상을 수정해야함.
     3-1. 콜백 함수에 대한 이해를 바탕으로 nextSlide()와 prevSlide() 함수 코드 재작성 필요.
     4. 스와이퍼 기능 (드래그 시 움직이는)
@@ -131,6 +129,20 @@ export default class Swiper {
         clearInterval(this.autoSlideTimer);
         this.isAuto = false;
     }
+    setHoverEvent(){
+        this.swiperBox.addEventListener("mouseover", this.handleMouseOver);
+        this.swiperBox.addEventListener("mouseleave", this.handleMouseLeave);
+    }
+    mouseOver(){
+        if(this.isAuto){
+            clearInterval(this.autoSlideTimer);
+        }
+    }
+    mouseLeave(){
+        if(this.isAuto){
+            this.setAutoSlide();
+        }
+    }
     resizeSwiper(){
         this.switchMedia();
         this.setItemWidth();
@@ -153,13 +165,11 @@ export default class Swiper {
         }
     }
     setMobSwiper(){
-        // console.log("i am a Mobile");
         this.numOfMoving = this.mobMoving;
         this.numOfStaging = this.mobStaging;
         this.setsMoblie = true;
     }
     setDesktopSwiper(){
-        // console.log("I am a PC");
         this.numOfMoving = this.deskMoving;
         this.numOfStaging = this.deskStaging;
         this.setsMoblie = false;
@@ -252,6 +262,6 @@ export default class Swiper {
     handlePrevBtn = () => { this.prevSlide(); }
     handleResize = () => { this.resizeSwiper(); }
     handlePlayBtn = () => { this.togglePlay(); }
-    handleMouseOver = () => { }
-    handleMouseLeave = () => { }
+    handleMouseOver = () => { this.mouseOver(); }
+    handleMouseLeave = () => { this.mouseLeave(); }
 }
