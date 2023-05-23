@@ -49,7 +49,7 @@ export default class Swiper {
     lastIdx = 0;
     itemNum = 0;
     itemWidth = 0;
-    slideDuraition = 680;
+    slideDuraition = 3000;
     slideInterval = 3000;
 
     // 객체 함수 실행 관련 변수
@@ -57,7 +57,8 @@ export default class Swiper {
     setsMoblie = false;
     isAuto = false;
     setsHoverEvent = false;
-
+    antiDuplicate = false;
+    
     //생성자 
     constructor(){
         if(arguments.length == 1){
@@ -185,33 +186,52 @@ export default class Swiper {
             this.setAutoSlide();
         }
     }
-    nextSlide(){
+    async nextSlide(){
+        console.log("Hi");
         let targetIdx = this.currentIdx + this.numOfMoving;
         if(this.isLastSlide){
-            for(let i = 0; i < this.numOfStaging; i++){
-                this.swiperBox.appendChild(this.swiperBox.children[0]);
+            console.log("bye");
+            if(!this.antiDuplicate){
+                this.antiDuplicate = true;
+                this.nextSlidePage()
+                .then(() => { 
+                    console.log("good");
+                    this.isLastSlide = false;
+                    this.antiDuplicate = false;
+                });
+            } else{
+                console.log("이 코드는 실행되지 않습니다.");
             }
-            this.placeSlide(this.currentIdx - this.numOfMoving);
             
-            setTimeout(()=>{ 
-                this.moveSlide(this.lastIdx - this.numOfStaging + 1);
-            },20);
-            
-            setTimeout(()=>{
-                for(let i = 0; i < this.numOfStaging; i++){
-                    this.swiperBox.prepend(this.swiperBox.children[this.lastIdx]);
-                }
-                this.placeSlide(0);
-            }, this.slideDuraition);
-            this.currentIdx = 0;
-            this.isLastSlide = false;
+
             return;
+
         } else if(targetIdx + this.numOfStaging > this.lastIdx){
             targetIdx = this.lastIdx - this.numOfStaging + 1;
             this.isLastSlide = true;
         } 
         this.moveSlide(targetIdx);
         this.currentIdx = targetIdx;
+    }
+    async nextSlidePage(){
+        return new Promise(async (resolve) => {
+            this.isLastSlide = false;
+            for(let i = 0; i < this.numOfStaging; i++){
+                this.swiperBox.appendChild(this.swiperBox.children[0]);
+            }
+
+            this.placeSlide(this.currentIdx - this.numOfMoving);
+            await new Promise(resolve => setTimeout(resolve, 0));
+            this.moveSlide(this.lastIdx - this.numOfStaging + 1);
+            await new Promise(resolve => setTimeout(resolve, this.slideDuraition));
+            for(let i = 0; i < this.numOfStaging; i++){
+                this.swiperBox.prepend(this.swiperBox.children[this.lastIdx]);
+            }
+            this.placeSlide(0);
+            
+            this.currentIdx = 0;
+            resolve();
+        });
     }
     prevSlide(){
         let targetIdx = this.currentIdx - this.numOfMoving;
@@ -249,12 +269,11 @@ export default class Swiper {
         this.swiperBox.style.left = `${-this.itemWidth * targetIdx}px`
     }
     //placeSlide는 애니메이션이 없이 슬라이드 움직임.
-    placeSlide(targetIdx){
+    async placeSlide(targetIdx){
         this.swiperBox.classList.remove("slidable");
         this.swiperBox.style.left = `${-this.itemWidth * targetIdx}px`
-        setTimeout(() => {
-            this.swiperBox.classList.add("slidable");    
-        }, 10);
+        await new Promise(resolve => setTimeout(resolve, 0));
+        this.swiperBox.classList.add("slidable");    
     }
 
     // 핸들러 모음
