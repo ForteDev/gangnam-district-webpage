@@ -29,8 +29,9 @@ II) Swiper 객체 초기화 관련
     3. 비동기식 코드 실행 때문인지 몰라도 swiper 이전/다음 버튼이 이상동작하는 현상을 수정해야함.
     3-1. 콜백 함수에 대한 이해를 바탕으로 nextSlide()와 prevSlide() 함수 코드 재작성 필요.
     4. 스와이퍼 기능 (드래그 시 움직이는)
+    5. autoSlide 진행 게이지 제작
 */
-class Swiper {
+export default class Swiper {
     // HTML 요소 객체 변수
     prevBtn = null;
     nextBtn = null;
@@ -251,5 +252,6 @@ class Swiper {
     handlePrevBtn = () => { this.prevSlide(); }
     handleResize = () => { this.resizeSwiper(); }
     handlePlayBtn = () => { this.togglePlay(); }
-    handleHover = () => { }
+    handleMouseOver = () => { }
+    handleMouseLeave = () => { }
 }

@@ -1,3 +1,4 @@
+import Swiper from './Swiper.js';
 const serviceSwiper = new Swiper(document.getElementById("main-service-swiper"));
 serviceSwiper.setNextBtn(document.querySelector(".main-service .swiper-button-next"));
 serviceSwiper.setPrevBtn(document.querySelector(".main-service .swiper-button-prev"));
