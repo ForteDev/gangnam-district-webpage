@@ -49,7 +49,7 @@ export default class Swiper {
     lastIdx = 0;
     itemNum = 0;
     itemWidth = 0;
-    slideDuraition = 3000;
+    slideDuraition = 680;
     slideInterval = 3000;
 
     // 객체 함수 실행 관련 변수

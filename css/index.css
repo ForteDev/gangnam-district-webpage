@@ -156,7 +156,7 @@
     height: 120px;
 }
 #main-info .main-service .frame #main-service-swiper.slidable{
-    transition: left 3s 80ms;
+    transition: left 0.6s 80ms;
 }
 #main-service-swiper .swiper-item{
     flex-shrink: 0;

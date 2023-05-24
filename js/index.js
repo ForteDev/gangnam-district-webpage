@@ -5,6 +5,7 @@ serviceSwiper.setPrevBtn(document.querySelector(".main-service .swiper-button-pr
 serviceSwiper.setNumOfMoving(9, 4);
 serviceSwiper.setNumOfStaging(9, 4);
 // serviceSwiper.setAutoSlide(1000);
+
 // const categorySwiper1 = new Swiper(document.querySelector("#main-info .announcement .category-swiper01 .category-swiper"));
 // categorySwiper1.setNumOfMoving(4);
 // categorySwiper1.setNumOfStaging(4);
