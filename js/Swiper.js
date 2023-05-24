@@ -49,7 +49,7 @@ export default class Swiper {
     lastIdx = 0;
     itemNum = 0;
     itemWidth = 0;
-    slideDuraition = 680;
+    slideDuraition = 3000;
     slideInterval = 3000;
 
     // 객체 함수 실행 관련 변수
@@ -218,31 +218,7 @@ export default class Swiper {
             this.isLastSlide = true;
         }
         this.moveSlide(targetIdx);
-        
-        // if(this.isLastSlide){
-        //     for(let i = 0; i < this.numOfStaging; i++){
-        //         this.swiperBox.appendChild(this.swiperBox.children[0]);
-        //     }
-        //     this.placeSlide(this.currentIdx - this.numOfMoving);
-            
-        //     setTimeout(()=>{ 
-        //         this.moveSlide(this.lastIdx - this.numOfStaging + 1);
-        //     },20);
-            
-        //     setTimeout(()=>{
-        //         for(let i = 0; i < this.numOfStaging; i++){
-        //             this.swiperBox.prepend(this.swiperBox.children[this.lastIdx]);
-        //         }
-        //         this.placeSlide(0);
-        //     }, this.slideDuraition);
-        //     this.isLastSlide = false;
-        //     return;
-        // } else if(targetIdx + this.numOfStaging > this.lastIdx){
-        //     targetIdx = this.lastIdx - this.numOfStaging + 1;
-        //     this.isLastSlide = true;
-        // } 
-        // this.moveSlide(targetIdx);
-        // this.currentIdx = targetIdx;
+        this.currentIdx = targetIdx;
     }
     prevSlide(){
         let targetIdx = this.currentIdx - this.numOfMoving;
@@ -280,7 +256,7 @@ export default class Swiper {
         this.currentIdx = targetIdx;
     }
     //placeSlide는 애니메이션이 없이 슬라이드 움직임.
-    placeSlide(targetIdx){
+    async placeSlide(targetIdx){
         this.swiperBox.classList.remove("slidable");
         this.swiperBox.style.left = `${-this.itemWidth * targetIdx}px`
         setTimeout(() => {
