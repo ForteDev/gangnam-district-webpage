@@ -57,6 +57,7 @@ export default class Swiper {
     setsMoblie = false;
     isAuto = false;
     setsHoverEvent = false;
+    clickEventBlocked = false;
 
     //생성자 
     constructor(){
@@ -186,32 +187,55 @@ export default class Swiper {
         }
     }
     nextSlide(){
-        let targetIdx = this.currentIdx + this.numOfMoving;
-        if(this.isLastSlide){
-            for(let i = 0; i < this.numOfStaging; i++){
-                this.swiperBox.appendChild(this.swiperBox.children[0]);
-            }
-            this.placeSlide(this.currentIdx - this.numOfMoving);
-            
-            setTimeout(()=>{ 
-                this.moveSlide(this.lastIdx - this.numOfStaging + 1);
-            },20);
-            
-            setTimeout(()=>{
-                for(let i = 0; i < this.numOfStaging; i++){
-                    this.swiperBox.prepend(this.swiperBox.children[this.lastIdx]);
-                }
-                this.placeSlide(0);
-            }, this.slideDuraition);
-            this.currentIdx = 0;
-            this.isLastSlide = false;
+        // let targetIdx = this.currentIdx + this.numOfMoving;
+        if(this.clickEventBlocked){
+            console.log("클릭 이벤트 방지 중입니다. 클릭 이벤트를 무시합니다.");
             return;
-        } else if(targetIdx + this.numOfStaging > this.lastIdx){
-            targetIdx = this.lastIdx - this.numOfStaging + 1;
-            this.isLastSlide = true;
         } 
-        this.moveSlide(targetIdx);
-        this.currentIdx = targetIdx;
+        
+        console.log("정상적인 코드 실행을 시작합니다.");
+
+        if(!this.clickEventBlocked){
+            this.clickEventBlocked = true;
+            new Promise((resolve) => {
+                console.log("클릭 이벤트 방지 작동중🚨");
+                setTimeout(()=>{
+                    resolve();
+                }, this.slideDuraition);
+            })
+            .then(() => {
+                console.log("클릭 이벤트 방지 해제🗽");
+                this.clickEventBlocked = false;
+            })
+        }
+        
+
+        
+        // if(this.isLastSlide){
+        //     for(let i = 0; i < this.numOfStaging; i++){
+        //         this.swiperBox.appendChild(this.swiperBox.children[0]);
+        //     }
+        //     this.placeSlide(this.currentIdx - this.numOfMoving);
+            
+        //     setTimeout(()=>{ 
+        //         this.moveSlide(this.lastIdx - this.numOfStaging + 1);
+        //     },20);
+            
+        //     setTimeout(()=>{
+        //         for(let i = 0; i < this.numOfStaging; i++){
+        //             this.swiperBox.prepend(this.swiperBox.children[this.lastIdx]);
+        //         }
+        //         this.placeSlide(0);
+        //     }, this.slideDuraition);
+        //     this.currentIdx = 0;
+        //     this.isLastSlide = false;
+        //     return;
+        // } else if(targetIdx + this.numOfStaging > this.lastIdx){
+        //     targetIdx = this.lastIdx - this.numOfStaging + 1;
+        //     this.isLastSlide = true;
+        // } 
+        // this.moveSlide(targetIdx);
+        // this.currentIdx = targetIdx;
     }
     prevSlide(){
         let targetIdx = this.currentIdx - this.numOfMoving;
