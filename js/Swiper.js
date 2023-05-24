@@ -54,7 +54,7 @@ export default class Swiper {
 
     // 객체 함수 실행 관련 변수
     isLastSlide = false;
-    setsMoblie = false;
+    setsMobile = false;
     isAuto = false;
     setsHoverEvent = false;
     clickEventBlocked = false;
@@ -101,7 +101,7 @@ export default class Swiper {
         } else {
             this.deskMoving = arguments[0];
             this.mobMoving = arguments[1];
-            this.setsMoblie = true;
+            this.setsMobile = true;
         }
         this.switchMedia(true);
     }
@@ -113,7 +113,7 @@ export default class Swiper {
         } else {
             this.deskStaging = arguments[0];
             this.mobStaging = arguments[1];
-            this.setsMoblie = true;
+            this.setsMobile = true;
         }
         this.switchMedia(true);
     }
@@ -144,6 +144,19 @@ export default class Swiper {
             this.setAutoSlide();
         }
     }
+    preventClick(){
+        this.clickEventBlocked = true;
+        new Promise((resolve) => {
+            console.log("클릭 이벤트 방지 작동중🚨");
+            setTimeout(()=>{
+                resolve();
+            }, this.slideDuraition);
+        })
+        .then(() => {
+            console.log("클릭 이벤트 방지 해제🗽");
+            this.clickEventBlocked = false;
+        })
+    }
     resizeSwiper(){
         this.switchMedia();
         this.setItemWidth();
@@ -154,9 +167,9 @@ export default class Swiper {
         //trigger = true로 인자 전달시 조건문 무조건 실행
         if(this.mobMoving != null && this.mobStaging != null){ 
             try{
-                if((!this.setsMoblie || trigger) && maxMoblieWidth > window.innerWidth){
+                if((!this.setsMobile || trigger) && maxMoblieWidth > window.innerWidth){
                     this.setMobSwiper();
-                } else if((this.setsMoblie || trigger) && maxMoblieWidth <= window.innerWidth){
+                } else if((this.setsMobile || trigger) && maxMoblieWidth <= window.innerWidth){
                     this.setDesktopSwiper();
                 }
             } catch(err) {
@@ -168,12 +181,12 @@ export default class Swiper {
     setMobSwiper(){
         this.numOfMoving = this.mobMoving;
         this.numOfStaging = this.mobStaging;
-        this.setsMoblie = true;
+        this.setsMobile = true;
     }
     setDesktopSwiper(){
         this.numOfMoving = this.deskMoving;
         this.numOfStaging = this.deskStaging;
-        this.setsMoblie = false;
+        this.setsMobile = false;
     }
     togglePlay(){
         if(this.isAuto){
@@ -187,29 +200,24 @@ export default class Swiper {
         }
     }
     nextSlide(){
-        // let targetIdx = this.currentIdx + this.numOfMoving;
         if(this.clickEventBlocked){
             console.log("클릭 이벤트 방지 중입니다. 클릭 이벤트를 무시합니다.");
             return;
-        } 
-        
-        console.log("정상적인 코드 실행을 시작합니다.");
-
-        if(!this.clickEventBlocked){
-            this.clickEventBlocked = true;
-            new Promise((resolve) => {
-                console.log("클릭 이벤트 방지 작동중🚨");
-                setTimeout(()=>{
-                    resolve();
-                }, this.slideDuraition);
-            })
-            .then(() => {
-                console.log("클릭 이벤트 방지 해제🗽");
-                this.clickEventBlocked = false;
-            })
+        } else {
+            this.preventClick();
         }
         
+        console.log("정상적인 코드 실행을 시작합니다.");
+        
+        let targetIdx = this.currentIdx + this.numOfMoving;
+        
+        if(this.isLastSlide){
 
+        } else if(targetIdx + this.numOfStaging > this.lastIdx){
+            targetIdx = this.lastIdx - this.numOfStaging + 1;
+            this.isLastSlide = true;
+        }
+        this.moveSlide(targetIdx);
         
         // if(this.isLastSlide){
         //     for(let i = 0; i < this.numOfStaging; i++){
@@ -227,7 +235,6 @@ export default class Swiper {
         //         }
         //         this.placeSlide(0);
         //     }, this.slideDuraition);
-        //     this.currentIdx = 0;
         //     this.isLastSlide = false;
         //     return;
         // } else if(targetIdx + this.numOfStaging > this.lastIdx){
@@ -266,11 +273,11 @@ export default class Swiper {
             return;
         }
         this.moveSlide(targetIdx);
-        this.currentIdx = targetIdx;
     }
 
     moveSlide(targetIdx){
         this.swiperBox.style.left = `${-this.itemWidth * targetIdx}px`
+        this.currentIdx = targetIdx;
     }
     //placeSlide는 애니메이션이 없이 슬라이드 움직임.
     placeSlide(targetIdx){
@@ -278,7 +285,8 @@ export default class Swiper {
         this.swiperBox.style.left = `${-this.itemWidth * targetIdx}px`
         setTimeout(() => {
             this.swiperBox.classList.add("slidable");    
-        }, 10);
+            this.currentIdx = targetIdx;
+        }, 0);
     }
 
     // 핸들러 모음
