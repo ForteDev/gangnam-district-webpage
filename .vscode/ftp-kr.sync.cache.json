@@ -11,8 +11,8 @@
         },
         "index.css": {
           "type": "-",
-          "size": 10780,
-          "lmtime": 1684391034215,
+          "size": 14233,
+          "lmtime": 1684914487305,
           "modified": false
         },
         "layout.css": {
@@ -848,9 +848,9 @@
       },
       "index.html": {
         "type": "-",
-        "size": 112451,
-        "lmtime": 1684459044749,
-        "modified": true
+        "size": 112456,
+        "lmtime": 1684913820079,
+        "modified": false
       },
       "index1.html": {
         "type": "-",
@@ -861,8 +861,8 @@
       "js": {
         "Swiper.js": {
           "type": "-",
-          "size": 10262,
-          "lmtime": 1684746416934,
+          "size": 12617,
+          "lmtime": 1684913744454,
           "modified": false
         },
         "global.js": {
@@ -873,9 +873,9 @@
         },
         "index.js": {
           "type": "-",
-          "size": 1313,
-          "lmtime": 1684467089717,
-          "modified": true
+          "size": 1436,
+          "lmtime": 1684909122477,
+          "modified": false
         }
       },
       "sandbox.html": {
