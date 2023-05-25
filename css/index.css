@@ -269,6 +269,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 1;
     color: #000;
     font-weight: 900;
     font-size: 24px;
@@ -283,7 +284,7 @@
 }
 
 #main-info .announcement .category-swiper-frame{
-    margin: 0 40px;
+    margin: 0 30px;
     overflow: hidden;
 }
 #main-info .announcement .category-swiper-frame .category-swiper{
@@ -291,7 +292,6 @@
     left: 0px;
     display: flex;
     align-items: center;
-    column-gap: 20px;
 }
 #main-info .announcement .category-swiper-frame .category-swiper.slidable{ transition: left 0.6s 80ms; }
 #main-info .announcement .category-swiper-frame .category-swiper .swiper-item{
@@ -300,16 +300,18 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: calc((100% - 60px) / 4);
+    width: calc((100% - 80px) / 4);
     height: 170px;
     flex-shrink: 0;
+    padding: 0 10px;
+    box-sizing: content-box;
 }
 #main-info .announcement .category-swiper-frame .category-swiper .swiper-item::before{
     position: absolute;
     top: 25px;
     display: block;
     content: '';
-    width: 100%;
+    width: calc(100% - 20px);
     height: 1px;
     background: #e0e3e6;
 }
