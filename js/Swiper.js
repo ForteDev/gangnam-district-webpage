@@ -24,7 +24,6 @@ II) Swiper 객체 초기화 관련
 
 
 /* 추가해야 하는 기능
-    1. 콜백 함수에 대한 이해를 바탕으로 nextSlide()와 prevSlide() 함수 코드 재작성 필요.
     2. 스와이퍼 기능 (드래그 시 움직이는)
     3. autoSlide 진행 게이지 제작
 */
@@ -243,7 +242,9 @@ export default class Swiper {
         } else {
             this.preventClick();
         }
+
         let targetIdx = this.currentIdx - this.numOfMoving;
+
         if(this.isLastSlide){
             if(this.itemNum % this.numOfMoving != 0){
                 targetIdx = this.currentIdx - this.itemNum % this.numOfMoving; 
