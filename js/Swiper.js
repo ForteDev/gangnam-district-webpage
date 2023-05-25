@@ -24,10 +24,9 @@ II) Swiper 객체 초기화 관련
 
 
 /* 추가해야 하는 기능
-    3. 비동기식 코드 실행 때문인지 몰라도 swiper 이전/다음 버튼이 이상동작하는 현상을 수정해야함.
-    3-1. 콜백 함수에 대한 이해를 바탕으로 nextSlide()와 prevSlide() 함수 코드 재작성 필요.
-    4. 스와이퍼 기능 (드래그 시 움직이는)
-    5. autoSlide 진행 게이지 제작
+    1. 콜백 함수에 대한 이해를 바탕으로 nextSlide()와 prevSlide() 함수 코드 재작성 필요.
+    2. 스와이퍼 기능 (드래그 시 움직이는)
+    3. autoSlide 진행 게이지 제작
 */
 export default class Swiper {
     // HTML 요소 객체 변수
@@ -84,6 +83,7 @@ export default class Swiper {
         this.itemNum = this.swiperBox.children.length;
         this.lastIdx = this.itemNum - 1;
         this.setItemWidth();
+        swiperBox.classList.add("slidable");
         window.addEventListener("resize", this.handleResize);
     }
     setItemWidth(){
@@ -150,7 +150,7 @@ export default class Swiper {
             console.log("클릭 이벤트 방지 작동중🚨");
             setTimeout(()=>{
                 resolve();
-            }, this.slideDuraition);
+            }, this.slideDuraition + 100);
         })
         .then(() => {
             console.log("클릭 이벤트 방지 해제🗽");
@@ -212,13 +212,26 @@ export default class Swiper {
         let targetIdx = this.currentIdx + this.numOfMoving;
         
         if(this.isLastSlide){
-
+            for(let i = 0; i < this.numOfStaging; i++){
+                this.swiperBox.appendChild(this.swiperBox.children[0]);
+            }
+            this.placeSlide(this.currentIdx - this.numOfMoving)
+                .then(() => {
+                    this.moveSlide(this.lastIdx - this.numOfStaging + 1);
+                    setTimeout(() => {
+                        for(let i = 0; i < this.numOfStaging; i++){
+                            this.swiperBox.prepend(this.swiperBox.children[this.lastIdx]);
+                        }
+                        this.placeSlide(0);
+                        this.isLastSlide = false;
+                    }, 680);
+                });
+            return;
         } else if(targetIdx + this.numOfStaging > this.lastIdx){
             targetIdx = this.lastIdx - this.numOfStaging + 1;
             this.isLastSlide = true;
         }
         this.moveSlide(targetIdx);
-        this.currentIdx = targetIdx;
     }
     prevSlide(){
         let targetIdx = this.currentIdx - this.numOfMoving;
@@ -254,15 +267,20 @@ export default class Swiper {
     moveSlide(targetIdx){
         this.swiperBox.style.left = `${-this.itemWidth * targetIdx}px`
         this.currentIdx = targetIdx;
+        console.log(new Date().getMilliseconds() + "슬라이더야 부드럽게 움직여 🚗");
     }
     //placeSlide는 애니메이션이 없이 슬라이드 움직임.
     async placeSlide(targetIdx){
         this.swiperBox.classList.remove("slidable");
         this.swiperBox.style.left = `${-this.itemWidth * targetIdx}px`
-        setTimeout(() => {
-            this.swiperBox.classList.add("slidable");    
-            this.currentIdx = targetIdx;
-        }, 0);
+        console.log(Date.now() + "슬라이드 순간이동!🌌");
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                this.swiperBox.classList.add("slidable");    
+                this.currentIdx = targetIdx;
+                resolve();
+            }, 50);
+        });
     }
 
     // 핸들러 모음
