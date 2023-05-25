@@ -144,18 +144,22 @@ export default class Swiper {
             this.setAutoSlide();
         }
     }
+    /* 
+    preventClick(): function 
+        애니메이션 진행중 next&prev 버튼의 클릭 이벤트를 막는 함수. 
+        slideduration + 45ms 동안 클릭 이벤트를 막음. 
+        cf) 45ms는 prevSlide() nextSlide() 함수 최대 소요 시간이 slideduration + 45ms이기 때문에 결정한 숫자.
+    */
     preventClick(){
         this.clickEventBlocked = true;
         new Promise((resolve) => {
-            console.log("클릭 이벤트 방지 작동중🚨");
             setTimeout(()=>{
                 resolve();
-            }, this.slideDuraition + 100);
+            }, this.slideDuraition + 45);
         })
         .then(() => {
-            console.log("클릭 이벤트 방지 해제🗽");
             this.clickEventBlocked = false;
-        })
+        });
     }
     resizeSwiper(){
         this.switchMedia();
@@ -200,23 +204,22 @@ export default class Swiper {
         }
     }
     nextSlide(){
+        // 슬라이드 애니메이션 실행 도중에 클릭하는 이벤트 무시.
         if(this.clickEventBlocked){
-            console.log("클릭 이벤트 방지 중입니다. 클릭 이벤트를 무시합니다.");
             return;
         } else {
             this.preventClick();
         }
         
-        console.log("정상적인 코드 실행을 시작합니다.");
-        
         let targetIdx = this.currentIdx + this.numOfMoving;
         
         if(this.isLastSlide){
+            // [마지막 슬라이드에서의 첫 페이지로의 전환 효과]
             for(let i = 0; i < this.numOfStaging; i++){
                 this.swiperBox.appendChild(this.swiperBox.children[0]);
             }
             this.placeSlide(this.currentIdx - this.numOfMoving)
-                .then(() => {
+            .then(() => {
                     this.moveSlide(this.lastIdx - this.numOfStaging + 1);
                     setTimeout(() => {
                         for(let i = 0; i < this.numOfStaging; i++){
@@ -224,7 +227,7 @@ export default class Swiper {
                         }
                         this.placeSlide(0);
                         this.isLastSlide = false;
-                    }, 680);
+                    }, this.slideDuraition);
                 });
             return;
         } else if(targetIdx + this.numOfStaging > this.lastIdx){
@@ -234,31 +237,34 @@ export default class Swiper {
         this.moveSlide(targetIdx);
     }
     prevSlide(){
+        // 슬라이드 애니메이션 실행 도중에 클릭하는 이벤트 무시.
+        if(this.clickEventBlocked){
+            return;
+        } else {
+            this.preventClick();
+        }
         let targetIdx = this.currentIdx - this.numOfMoving;
         if(this.isLastSlide){
-            if(this.itemNum % this.numOfMoving == 0){
-                targetIdx = this.currentIdx - this.numOfMoving;
-            } else {
+            if(this.itemNum % this.numOfMoving != 0){
                 targetIdx = this.currentIdx - this.itemNum % this.numOfMoving; 
             }
             this.isLastSlide = false;
         }else if(targetIdx < 0){
+            // [첫 슬라이드에서의 마지막 페이지로의 전환 효과]
             for(let i = 0; i < this.numOfStaging; i++){
                 this.swiperBox.prepend(this.swiperBox.children[this.lastIdx]);
             }
-            this.placeSlide(this.numOfStaging);
-            setTimeout(() => {
+            this.placeSlide(this.numOfStaging)
+            .then(() => {
                 this.moveSlide(0);
-            }, 20);
-            
-            setTimeout(() => {
-                for(let i = 0; i < this.numOfStaging; i++){
-                    this.swiperBox.append(this.swiperBox.children[0]);
-                }
-                this.placeSlide(this.lastIdx - this.numOfStaging + 1);
-            }, this.slideDuraition);
-            this.currentIdx = this.lastIdx - this.numOfStaging + 1;
-            this.isLastSlide = true;
+                setTimeout(() => {
+                    for(let i = 0; i < this.numOfStaging; i++){
+                        this.swiperBox.append(this.swiperBox.children[0]);
+                    }
+                    this.placeSlide(this.lastIdx - this.numOfStaging + 1);
+                    this.isLastSlide = true;
+                }, this.slideDuraition);
+            })
             return;
         }
         this.moveSlide(targetIdx);
@@ -267,19 +273,17 @@ export default class Swiper {
     moveSlide(targetIdx){
         this.swiperBox.style.left = `${-this.itemWidth * targetIdx}px`
         this.currentIdx = targetIdx;
-        console.log(new Date().getMilliseconds() + "슬라이더야 부드럽게 움직여 🚗");
     }
     //placeSlide는 애니메이션이 없이 슬라이드 움직임.
-    async placeSlide(targetIdx){
+    placeSlide(targetIdx){
         this.swiperBox.classList.remove("slidable");
         this.swiperBox.style.left = `${-this.itemWidth * targetIdx}px`
-        console.log(Date.now() + "슬라이드 순간이동!🌌");
         return new Promise((resolve) => {
             setTimeout(() => {
                 this.swiperBox.classList.add("slidable");    
                 this.currentIdx = targetIdx;
                 resolve();
-            }, 50);
+            }, 15);
         });
     }
 
