@@ -148,6 +148,7 @@ export default class Swiper {
         애니메이션 진행중 next&prev 버튼의 클릭 이벤트를 막는 함수. 
         slideduration + 45ms 동안 클릭 이벤트를 막음. 
         cf) 45ms는 prevSlide() nextSlide() 함수 최대 소요 시간이 slideduration + 45ms이기 때문에 결정한 숫자.
+        Swiper.ontransitionend의 사용을 고려하였으나, 클릭 이벤트 방지 기간을 slideduration이 아닌 slideduration + 45ms로 커스텀하게 변경할 수 있어야 하기에 현재 코드 사용
     */
     preventClick(){
         this.clickEventBlocked = true;
