@@ -27,7 +27,7 @@ II) Swiper 객체 초기화 관련
     2. 스와이퍼 기능 (드래그 시 움직이는)
     3. autoSlide 진행 게이지 제작
 */
-export default class Swiper {
+class Slider {
     // HTML 요소 객체 변수
     prevBtn = null;
     nextBtn = null;
@@ -82,8 +82,10 @@ export default class Swiper {
         this.itemNum = this.swiperBox.children.length;
         this.lastIdx = this.itemNum - 1;
         this.setItemWidth();
-        swiperBox.classList.add("slidable");
+        this.swiperBox.classList.add("slidable");
+        
         window.addEventListener("resize", this.handleResize);
+        
     }
     setItemWidth(){
         try{
@@ -142,7 +144,7 @@ export default class Swiper {
         if(this.isAuto){
             this.setAutoSlide();
         }
-    }
+    }  
     /* 
     preventClick(): function 
         애니메이션 진행중 next&prev 버튼의 클릭 이벤트를 막는 함수. 
@@ -287,7 +289,7 @@ export default class Swiper {
             }, 15);
         });
     }
-
+   
     // 핸들러 모음
     handleNextBtn = () => { this.nextSlide(); }
     handlePrevBtn = () => { this.prevSlide(); }
@@ -296,3 +298,48 @@ export default class Swiper {
     handleMouseOver = () => { this.mouseOver(); }
     handleMouseLeave = () => { this.mouseLeave(); }
 }
+
+class Swiper extends Slider{
+    originX = 0;
+
+    setSwiperBox(swiperBox){
+        super.setSwiperBox(swiperBox);
+        this.swiperBox.addEventListener("mousedown", this.handleMouseDown);
+    }
+    swipeSlide(event){
+        console.log("hello");
+        this.swiperBox.classList.remove("slidable");
+        this.originX = event.pageX;
+
+        // let diffX = 0;
+        this.swiperBox.addEventListener("mousemove", this.handleMouseMove);
+
+        function hello() {
+            console.log("hello");
+        }
+        // this.swiperBox.onmouseup = function(){
+        //     this.swiperBox.removeEventListener("mousemove", onMouseMove);
+        //     let slideWidth = itemWidth * numOfStaging;
+        //     if(diffX > slideWidth / 2){
+        //         this.nextSlide();
+        //     } else if(diffX < -slideWidth / 2){
+        //         this.prevSlide();
+            // }
+            // this.swiperBox.classList.add("slidable");
+            // this.swiperBox.onmouseup = null;
+        // }
+    }
+
+    onMouseMove(event){
+        this.moveAt(event.pageX);
+    }
+
+    moveAt(pageX){
+        diffX = this.originX - pageX;
+        this.swiperBox.style.left = -diffX + 'px';
+    }
+    handleMouseDown = (event) => { this.swipeSlide(event); console.log("Hl");}
+    handleMouseMove = (event) => { this.onMouseMove(event); console.log("Hl");}
+}
+
+export { Slider, Swiper };
